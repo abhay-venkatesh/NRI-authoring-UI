@@ -29,6 +29,10 @@
     <!-- Container #3 -->
     <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
                 md-component-id="left" ng-click="app.toggleList()">
+      <!-- Title -->
+      <md-toolbar layout="row" layout-align="center" class="md-accent">
+        <h2 class="md-title"> Therbligs </h2>
+      </md-toolbar>
       <!-- Custom UsersList component -->
       <users-list
           users="app.users"
