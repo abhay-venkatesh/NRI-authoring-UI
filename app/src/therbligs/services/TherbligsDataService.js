@@ -1,13 +1,13 @@
 /**
- * Users DataService
+ * Therbligs DataService
  * Uses embedded, hard-coded data model; acts asynchronously to simulate
  * remote data service call(s).
  *
  * @returns {{loadAll: Function}}
  * @constructor
  */
-function UsersDataService($q) {
-  var users = [
+function TherbligsDataService($q) {
+  var therbligs = [
     {
       name: 'Transport Empty',
     },
@@ -30,12 +30,12 @@ function UsersDataService($q) {
 
   // Promise-based API
   return {
-    loadAllUsers: function() {
+    loadAllTherbligs: function() {
       // Simulate async nature of real remote calls
-      return $q.when(users);
+      return $q.when(therbligs);
     }
   };
 }
 
-export default ['$q', UsersDataService];
+export default ['$q', TherbligsDataService];
 

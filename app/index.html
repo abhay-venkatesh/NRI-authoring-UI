@@ -17,7 +17,7 @@
   <!-- Container #1 (see wireframe) -->
   <md-toolbar layout="row" class="md-toolbar-tools">
     <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()"
-               aria-label="Show User List">
+               aria-label="Show Therblig List">
       <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
     <h1>NSF NRI Authoring Environment</h1>
@@ -33,12 +33,13 @@
       <md-toolbar layout="row" layout-align="center" class="md-accent">
         <h2 class="md-title"> Therbligs </h2>
       </md-toolbar>
-      <!-- Custom UsersList component -->
-      <users-list
-          users="app.users"
+
+      <!-- Custom TherbligList component -->
+      <therbligs-list
+          therbligs="app.therbligs"
           selected="app.selected"
-          on-selected="app.selectUser(user)">
-      </users-list>
+          on-selected="app.selectTherblig(therblig)">
+      </therbligs-list>
     </md-sidenav>
 
     <!-- Container #4 -->

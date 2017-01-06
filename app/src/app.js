@@ -6,9 +6,9 @@ import 'angular-aria';
 import 'angular-material';
 
 import AppController from 'src/AppController';
-import Users from 'src/users/Users';
+import Therbligs from 'src/therbligs/Therbligs';
 
-export default angular.module( 'starter-app', [ 'ngMaterial', Users.name ] )
+export default angular.module( 'starter-app', [ 'ngMaterial', Therbligs.name] )
   .config(($mdThemingProvider) => {
 
     $mdThemingProvider.theme('default')

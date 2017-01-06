@@ -1,24 +1,24 @@
 /**
  * Main App Controller for the Angular Material Starter App
- * @param UsersDataService
+ * @param TherbligsDataService
  * @param $mdSidenav
  * @constructor
  */
-function AppController(UsersDataService, $mdSidenav) {
+function AppController(TherbligsDataService, $mdSidenav) {
   var self = this;
 
-  self.selected     = null;
-  self.users        = [ ];
-  self.selectUser   = selectUser;
-  self.toggleList   = toggleUsersList;
+  self.selected = null;
+  self.therbligs = [ ];
+  self.selectTherblig = selectTherblig;
+  self.toggleList = toggleTherbligsList;
 
-  // Load all registered users
+  // Load all library therbligs
 
-  UsersDataService
-        .loadAllUsers()
-        .then( function( users ) {
-          self.users    = [].concat(users);
-          self.selected = users[0];
+  TherbligsDataService
+        .loadAllTherbligs()
+        .then( function(therbligs) {
+          self.therbligs = [].concat(therbligs);
+          self.selected = therbligs[0];
         });
 
   // *********************************
@@ -28,7 +28,7 @@ function AppController(UsersDataService, $mdSidenav) {
   /**
    * Hide or Show the 'left' sideNav area
    */
-  function toggleUsersList() {
+  function toggleTherbligsList() {
     $mdSidenav('left').toggle();
   }
 
@@ -36,9 +36,9 @@ function AppController(UsersDataService, $mdSidenav) {
    * Select the current avatars
    * @param menuId
    */
-  function selectUser ( user ) {
-    self.selected = angular.isNumber(user) ? $scope.users[user] : user;
+  function selectTherblig (therblig) {
+    self.selected = angular.isNumber(therblig) ? $scope.therbligs[therblig] : therblig;
   }
 }
 
-export default [ 'UsersDataService', '$mdSidenav', AppController ];
+export default ['TherbligsDataService', '$mdSidenav', AppController];
