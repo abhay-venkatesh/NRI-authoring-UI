@@ -1,19 +1,23 @@
 /**
  * Main App Controller for the Angular Material Starter App
  * @param TherbligsDataService
+ * @param PlanCardsDataService
  * @param $mdSidenav
  * @constructor
  */
-function AppController(TherbligsDataService, $mdSidenav) {
+function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
   var self = this;
 
+  // Therblig Variables
   self.selected = null;
   self.therbligs = [ ];
   self.selectTherblig = selectTherblig;
   self.toggleList = toggleTherbligsList;
 
-  // Load all library therbligs
+  // Plan variables
+  self.plans = [ ];
 
+  // Load all library therbligs
   TherbligsDataService
         .loadAllTherbligs()
         .then( function(therbligs) {
@@ -21,6 +25,12 @@ function AppController(TherbligsDataService, $mdSidenav) {
           self.selected = therbligs[0];
         });
 
+  // Load all library plans
+  PlanCardsDataService
+        .loadAllPlans()
+        .then( function(plans) {
+          self.plans= [].concat(plans);
+        });
   // *********************************
   // Internal methods
   // *********************************
@@ -41,4 +51,4 @@ function AppController(TherbligsDataService, $mdSidenav) {
   }
 }
 
-export default ['TherbligsDataService', '$mdSidenav', AppController];
+export default ['TherbligsDataService', 'PlanCardsDataService', '$mdSidenav', AppController];

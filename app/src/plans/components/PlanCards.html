@@ -1,5 +1,11 @@
-<md-card>
-    <md-card-title>
-        test
-    </md-card-title>
-</md-card>
+<div class='md-padding' layout="row" flex>
+  <div layout="row" flex>
+    <div class="parent" layout="column" ng-repeat="plan in $ctrl.plans" flex>
+      <md-card>
+        <md-card-title>
+          {{ plan.name }}
+        </md-card-title>
+      </md-card>
+    </div>
+  </div>
+</div>
