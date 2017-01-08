@@ -4,7 +4,9 @@
 export default {
   name : 'therbligsList',
   config : {
-    bindings         : {  therbligs: '<', selected : '<', showDetails : '&onSelected' },
-    templateUrl      : 'src/therbligs/components/list/TherbligsList.html'
+    bindings: {
+        therbligs: '<', selected : '<', showDetails : '&onSelected'
+    },
+    templateUrl: 'src/therbligs/components/list/TherbligsList.html'
   }
 };

@@ -9,7 +9,7 @@ import AppController from 'src/AppController';
 import Therbligs from 'src/therbligs/Therbligs';
 import Plans from 'src/plans/Plans';
 
-export default angular.module( 'starter-app', [ 'ngMaterial', Therbligs.name] )
+export default angular.module( 'starter-app', [ 'ngMaterial', Therbligs.name, Plans.name] )
   .config(($mdIconProvider, $mdThemingProvider) => {
 
     $mdIconProvider
