@@ -132,3 +132,36 @@ span.name {
   padding-left: 5px;
 }
 
+/* Plan Card Styles */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.plan-cards-container {
+  overflow-y: auto;
+}
+
+.flipped {
+  transform:rotateX(180deg);
+  -ms-transform:rotateX(180deg); /* IE 9 */
+  -webkit-transform:rotateX(180deg); /* Safari and Chrome */
+}
+
+.plan-cards {
+  width: 350px;
+}
+
+.plan-card-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plan-card-content {
+}

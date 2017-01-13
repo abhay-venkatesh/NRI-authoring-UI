@@ -13,6 +13,12 @@ function PlanCardsDataService($q) {
     },
     {
       name: 'Rothschild Kit',
+    },
+    {
+      name: 'Roaster Kit',
+    },
+    {
+      name: 'Furniture Kit',
     }
   ];
 

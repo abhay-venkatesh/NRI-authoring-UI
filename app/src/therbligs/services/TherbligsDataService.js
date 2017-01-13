@@ -25,7 +25,7 @@ function TherbligsDataService($q) {
     },
     {
       name: 'Hold',
-    }
+    },
   ];
 
   // Promise-based API
