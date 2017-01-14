@@ -10,6 +10,10 @@ function PlanCardsDataService($q) {
   var plans = [
     {
       name: 'IKEA Kit',
+      therbligList: [
+          'Grasp',
+          'Unload'
+      ]
     },
     {
       name: 'Rothschild Kit',
