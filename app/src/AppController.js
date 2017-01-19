@@ -5,6 +5,8 @@
  * @param $mdSidenav
  * @constructor
  */
+"use strict";
+
 function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
   var self = this;
 

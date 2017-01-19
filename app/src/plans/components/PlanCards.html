@@ -7,11 +7,14 @@
             {{ plan.name }}
           </md-card-title>
           <md-card-content class="plan-card-content">
+
+            <! -- Therblig List in Plan -->
             <md-list>
-              <md-list-item ng-repeat-"therblig in therbligs">
+              <md-list-item ng-repeat-"therblig in $ctrl.plans">
                 {{ therblig.name }}
               </md-list-item>>
             </md-list>
+
           </md-card-content>
         </md-card>
       </div>

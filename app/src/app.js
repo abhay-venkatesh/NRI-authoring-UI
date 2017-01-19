@@ -1,3 +1,5 @@
+"use strict";
+
 // Load libraries
 import angular from 'angular';
 

@@ -1,6 +1,7 @@
+"use strict";
 
 function PlansController() {
+    console.log("yolo");
+}
 
-};
-
-export default [ PlansController ];
+export { PlansController };
