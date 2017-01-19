@@ -9,8 +9,14 @@
           <md-card-content class="plan-card-content">
 
             <! -- Therblig List in Plan -->
-            <md-list>
-              <md-list-item ng-repeat="therblig in plan.therbligList">
+            <md-list dnd-list="plan.therbligList">
+              <md-list-item ng-repeat="therblig in plan.therbligList"
+			dnd-draggable="therblig" 
+			dnd-moved="plan.therbligList.splice($index, 1)"
+			dnd-effect-allowed="move"
+			dnd-selected="models.selected = therblig"
+			ng-class="{ 'selected': models.selected === item }"
+			>
                 {{ therblig }}
               </md-list-item>>
             </md-list>
