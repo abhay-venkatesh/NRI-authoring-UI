@@ -16,9 +16,6 @@ function AppController(TherbligsDataService, $mdSidenav) {
   self.selectTherblig = selectTherblig;
   self.toggleList = toggleTherbligsList;
 
-  // Plan variables
-  self.plans = [ ];
-
   // Load all library therbligs
   TherbligsDataService
         .loadAllTherbligs()
