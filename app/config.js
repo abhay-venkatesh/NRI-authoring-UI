@@ -3,7 +3,8 @@ System.config({
   transpiler: "-a",
   paths: {
     "app/*": "src/*.js",
-    "users/*": "src/users/*.js",
+    "therbligs/*": "src/therbligs/*.js",
+    "plans/*": "src/plans/*.js",
     "material-start/*": "src/*.js",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
