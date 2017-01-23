@@ -1,7 +1,19 @@
 "use strict";
 
-function PlansController() {
-    console.log("yolo");
+function PlansController(PlanCardsDataService) {
+  console.log("PlansController active");
+
+  var self = this;
+
+  self.plans = [];
+
+
+  // Load all library plans
+  PlanCardsDataService
+        .loadAllPlans()
+        .then( function(plans) {
+          self.plans= [].concat(plans);
+        });
 }
 
-export { PlansController };
+export default [ 'PlanCardsDataService', PlansController ];

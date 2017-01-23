@@ -1,3 +1,5 @@
+'use strict';
+
 import angular from 'angular';
 
 import App from 'src/app';
@@ -12,7 +14,7 @@ angular
     angular
       .module( 'starter-app-bootstrap', [ App.name ] )
       .run(()=>{
-        console.log(`Running the 'starter-app-bootstrap' ES6 Material-Start Tutorial`);
+        console.log(`Running the NSF NRI Authoring Environment`);
       });
 
     let body = document.getElementsByTagName("body")[0];

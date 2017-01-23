@@ -12,7 +12,11 @@ import AppController from 'src/AppController';
 import Therbligs from 'src/therbligs/Therbligs';
 import Plans from 'src/plans/Plans';
 
-export default angular.module( 'starter-app', [ 'ngMaterial', 'dndLists', Therbligs.name, Plans.name] )
+export default angular.module( 'starter-app', [
+    'ngMaterial',
+    'dndLists',
+    Therbligs.name,
+    Plans.name] )
   .config(($mdIconProvider, $mdThemingProvider) => {
 
     $mdIconProvider

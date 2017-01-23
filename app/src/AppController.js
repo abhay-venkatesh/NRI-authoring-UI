@@ -7,7 +7,7 @@
  */
 "use strict";
 
-function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
+function AppController(TherbligsDataService, $mdSidenav) {
   var self = this;
 
   // Therblig Variables
@@ -27,12 +27,6 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
           self.selected = therbligs[0];
         });
 
-  // Load all library plans
-  PlanCardsDataService
-        .loadAllPlans()
-        .then( function(plans) {
-          self.plans= [].concat(plans);
-        });
   // *********************************
   // Internal methods
   // *********************************
@@ -53,4 +47,4 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
   }
 }
 
-export default ['TherbligsDataService', 'PlanCardsDataService', '$mdSidenav', AppController];
+export default ['TherbligsDataService', '$mdSidenav', AppController];
