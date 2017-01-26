@@ -1,8 +1,6 @@
 "use strict";
 
 function PlansController(PlanCardsDataService) {
-  console.log("PlansController active");
-
   var self = this;
 
   self.plans = [];
