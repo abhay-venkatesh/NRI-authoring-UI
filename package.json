@@ -5,6 +5,9 @@
   "description": "A ES6 Tutorial project for AngularJS Material Start",
   "repository": "https://github.com/angular/material-start",
   "license": "MIT",
+  "engines": {
+    "node": "6.7.0",
+  }
   "jspm": {
     "directories": {
       "baseURL": "app",
