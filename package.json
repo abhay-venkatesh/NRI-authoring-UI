@@ -40,5 +40,5 @@
   "scripts": {
     "postinstall": "jspm install",
     "serve": "live-server ./app"
-  },
+  }
 }
