@@ -11,29 +11,27 @@ function PlanCardsDataService($q) {
     {
       name: 'IKEA Kit',
       therbligList: [
-          'Grasp',
-          'Unload'
+          {
+              name: 'Grasp',
+          },
+          {
+              name: 'Unload',
+          }
       ]
     },
     {
       name: 'Rothschild Kit',
       therbligList: [
-          'Grasp',
-          'Unload'
       ]
     },
     {
       name: 'Roaster Kit',
       therbligList: [
-          'Grasp',
-          'Unload'
       ]
     },
     {
       name: 'Furniture Kit',
       therbligList: [
-          'Grasp',
-          'Unload'
       ]
     }
   ];

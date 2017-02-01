@@ -6,7 +6,6 @@ export default {
         bindings: {
             plans: '<'
         },
-        templateUrl: 'src/plans/components/PlanCards.html',
-        controller: PlansController
+        templateUrl: 'src/plans/components/PlanCards.html'
     }
 };

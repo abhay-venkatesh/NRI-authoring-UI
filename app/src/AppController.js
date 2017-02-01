@@ -7,7 +7,7 @@
  */
 "use strict";
 
-function AppController(TherbligsDataService, $mdSidenav) {
+function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
   var self = this;
 
   // Therblig Variables
@@ -16,12 +16,22 @@ function AppController(TherbligsDataService, $mdSidenav) {
   self.selectTherblig = selectTherblig;
   self.toggleList = toggleTherbligsList;
 
+  // Plan variables
+  self.plans = [];
+
   // Load all library therbligs
   TherbligsDataService
         .loadAllTherbligs()
         .then( function(therbligs) {
           self.therbligs = [].concat(therbligs);
           self.selected = therbligs[0];
+        });
+
+  // Load all library plans
+  PlanCardsDataService
+        .loadAllPlans()
+        .then( function(plans) {
+          self.plans= [].concat(plans);
         });
 
   // *********************************
@@ -44,4 +54,4 @@ function AppController(TherbligsDataService, $mdSidenav) {
   }
 }
 
-export default ['TherbligsDataService', '$mdSidenav', AppController];
+export default ['TherbligsDataService', 'PlanCardsDataService', '$mdSidenav', AppController];
