@@ -10,7 +10,9 @@
 
             <! -- Therblig List in Plan -->
             <md-list dnd-list="plan.therbligList">
-              <md-list-item ng-repeat="therblig in plan.therbligList"
+              <md-list-item 
+                class="md-button"
+                ng-repeat="therblig in plan.therbligList"
                 dnd-draggable="therblig"
                 dnd-moved="plan.therbligList.splice($index, 1)"
                 dnd-effect-allowed="move"
