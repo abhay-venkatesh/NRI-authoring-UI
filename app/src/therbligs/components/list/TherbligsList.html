@@ -1,15 +1,11 @@
 <!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
 <md-list dnd-list="$ctrl.therbligs">
-  <md-list-item ng-repeat="therblig in $ctrl.therbligs"
+  <md-list-item class="md-button" ng-repeat="therblig in $ctrl.therbligs"
         dnd-draggable="therblig"
         dnd-moved="$ctrl.therbligs.splice($index, 1)"
         dnd-effect-allowed="move"
         dnd-selected="models.selected = therblig"
-        ng-class="{ 'selected': models.selected === therblig }"
         >
-    <md-button ng-click="$ctrl.showDetails({therblig:therblig})" 
-        ng-class="{'selected' : therblig === $ctrl.selected }">
       {{therblig.name}}
-    </md-button>
   </md-list-item>
 </md-list>
