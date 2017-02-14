@@ -4,8 +4,8 @@ function EditModalService($mdDialog) {
 
   this.openModal =  () => {
     var alert = $mdDialog.alert({
-            title: 'Attention',
-            textContent: 'This is an example of how easy dialogs can be!',
+            title: 'Edit Therblig',
+            textContent: 'Edit the therblig here!',
             ok: 'Close'
           });
 
