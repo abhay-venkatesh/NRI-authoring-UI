@@ -7,12 +7,13 @@
  */
 "use strict";
 
-function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
+function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
+  TherbligsController, $mdDialog, $scope) {
   var self = this;
 
   // Therblig Variables
   self.selected = null;
-  self.therbligs = [ ];
+  self.therbligs = [];
   self.selectTherblig = selectTherblig;
   self.toggleList = toggleTherbligsList;
 
@@ -24,7 +25,6 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
         .loadAllTherbligs()
         .then( function(therbligs) {
           self.therbligs = [].concat(therbligs);
-          self.selected = therbligs[0];
         });
 
   // Load all library plans
@@ -39,18 +39,17 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav) {
   // *********************************
 
   /**
+   * Select the current therblig
+   * @param menuId
+   */
+  function selectTherblig(therblig, $event) {
+    self.selected = angular.isNumber(therblig) ? $scope.therbligs[therblig] : therblig;
+  }
+  /**
    * Hide or Show the 'left' sideNav area
    */
   function toggleTherbligsList() {
     $mdSidenav('left').toggle();
-  }
-
-  /**
-   * Select the current avatars
-   * @param menuId
-   */
-  function selectTherblig (therblig) {
-    self.selected = angular.isNumber(therblig) ? $scope.therbligs[therblig] : therblig;
   }
 }
 

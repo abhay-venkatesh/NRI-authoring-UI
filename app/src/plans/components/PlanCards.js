@@ -1,10 +1,9 @@
-import PlansController from 'src/plans/PlansController';
-
+'use strict';
 export default {
     name: 'planCards',
     config: {
         bindings: {
-            plans: '<'
+          plans: '<'
         },
         templateUrl: 'src/plans/components/PlanCards.html'
     }
