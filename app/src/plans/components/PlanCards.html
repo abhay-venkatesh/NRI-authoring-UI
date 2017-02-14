@@ -11,13 +11,15 @@
             <! -- Therblig List in Plan -->
             <md-list dnd-list="plan.therbligList">
               <md-list-item 
-                class="md-button"
                 ng-repeat="therblig in plan.therbligList"
                 dnd-draggable="therblig"
                 dnd-moved="plan.therbligList.splice($index, 1)"
                 dnd-effect-allowed="move"
                 >
-                {{ therblig.name }}
+                <span class="md-button" ng-click="$ctrl.showDetails({therblig:therblig})"
+                   ng-class="{'selected': therblig === $ctrl.selected}">
+                    {{ therblig.name }}
+                </span>
               </md-list-item>
             </md-list>
 
