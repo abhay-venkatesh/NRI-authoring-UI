@@ -1,6 +1,6 @@
 'use strict';
 
-function TherbligsController($mdDialog) {
+function TherbligsController() {
   var self = this;
 }
 

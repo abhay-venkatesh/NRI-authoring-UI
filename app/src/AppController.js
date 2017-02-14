@@ -8,7 +8,7 @@
 "use strict";
 
 function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
-  TherbligsController, $mdDialog, $scope) {
+  EditModalService, $mdDialog, $scope) {
   var self = this;
 
   // Therblig Variables
@@ -42,8 +42,9 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
    * Select the current therblig
    * @param menuId
    */
-  function selectTherblig(therblig, $event) {
+  function selectTherblig(therblig) {
     self.selected = angular.isNumber(therblig) ? $scope.therbligs[therblig] : therblig;
+    EditModalService.openModal();
   }
   /**
    * Hide or Show the 'left' sideNav area
@@ -53,4 +54,5 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   }
 }
 
-export default ['TherbligsDataService', 'PlanCardsDataService', '$mdSidenav', AppController];
+export default ['TherbligsDataService', 'PlanCardsDataService','$mdSidenav', 'EditModalService',
+  '$mdDialog', '$scope', AppController];
