@@ -1,5 +1,7 @@
 'use strict';
 
+import TherbligsController from 'src/therbligs/TherbligsController';
+
 function EditModalService($mdDialog) {
 
   this.openModal =  () => {
