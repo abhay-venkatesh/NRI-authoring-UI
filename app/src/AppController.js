@@ -31,7 +31,7 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   PlanCardsDataService
         .loadAllPlans()
         .then( function(plans) {
-          self.plans= [].concat(plans);
+          self.plans = [].concat(plans);
         });
 
   // *********************************

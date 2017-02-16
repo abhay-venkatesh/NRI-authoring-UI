@@ -1,8 +1,9 @@
 <div class='md-padding plan-cards-container flipped' layout="row" flex >
   <div class='flipped'>
-    <div layout="row" dnd-list="$ctrl.plans">
+      <div layout="row" dnd-list="$ctrl.plans" dnd-allowed-types="['plan']">
       <div class="parent" layout="column" ng-repeat="plan in $ctrl.plans" flex
           dnd-draggable="plan"
+          dnd-type="'plan'"
           dnd-moved="$ctrl.plans.splice($index, 1)"
           dnd-effect-allowed="move">
         <md-card class="plan-cards">
@@ -12,10 +13,11 @@
           <md-card-content class="plan-card-content">
 
             <! -- Therblig List in Plan -->
-            <md-list dnd-list="plan.therbligList">
+            <md-list dnd-list="plan.therbligList" dnd-allowed-types="['therblig']">
               <md-list-item 
                 ng-repeat="therblig in plan.therbligList"
                 dnd-draggable="therblig"
+                dnd-type="'therblig'"
                 dnd-moved="plan.therbligList.splice($index, 1)"
                 dnd-effect-allowed="move"
                 >
