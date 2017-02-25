@@ -6,27 +6,15 @@
  * @returns {{loadAll: Function}}
  * @constructor
  */
+"use strict";
+import allTherbligs from 'src/therbligs/services/therbligsDataModel';
+
 function TherbligsDataService($q) {
-  var therbligs = [
-    {
-      name: 'Transport Empty',
-    },
-    {
-      name: 'Grasp',
-    },
-    {
-      name: 'Transport Loaded',
-    },
-    {
-      name: 'Position',
-    },
-    {
-      name: 'Release',
-    },
-    {
-      name: 'Hold',
-    },
-  ];
+  var therbligs = {
+    physicalTherbligs: allTherbligs.physicalTherbligs,
+    cognitiveTherbligs: allTherbligs.cognitiveTherbligs,
+    cogPhysTherbligs: allTherbligs.cogPhysTherbligs,
+  };
 
   // Promise-based API
   return {

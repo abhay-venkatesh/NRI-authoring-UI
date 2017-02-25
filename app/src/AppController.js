@@ -13,7 +13,9 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
 
   // Therblig Variables
   self.selected = null;
-  self.therbligs = [];
+  self.physicalTherbligs = [];
+  self.cognitiveTherbligs = [];
+  self.cogPhysTherbligs = [];
   self.selectTherblig = selectTherblig;
   self.toggleList = toggleTherbligsList;
 
@@ -24,7 +26,9 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   TherbligsDataService
         .loadAllTherbligs()
         .then( function(therbligs) {
-          self.therbligs = [].concat(therbligs);
+          self.physicalTherbligs = [].concat(therbligs.physicalTherbligs);
+          self.cognitiveTherbligs = [].concat(therbligs.cognitiveTherbligs);
+          self.cogPhysTherbligs = [].concat(therbligs.cogPhysTherbligs);
         });
 
   // Load all library plans

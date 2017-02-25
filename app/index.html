@@ -30,13 +30,27 @@
     <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
                 md-component-id="left" ng-click="app.toggleList()">
       <!-- Title -->
-      <md-toolbar layout="row" layout-align="center" class="md-accent">
+      <md-toolbar layout="row" layout-align="center" class="md-accent" style="min-height:30px">
         <h2 class="md-title"> Therbligs </h2>
       </md-toolbar>
 
       <!-- Custom TherbligList component -->
+      <br>
+      <md-divider md-inset class="md-caption"> Physical </md-divider>
       <therbligs-list
-            therbligs="app.therbligs"
+            therbligs="app.physicalTherbligs"
+            selected="app.selected"
+            on-selected="app.selectTherblig(therblig)">
+      </therbligs-list>
+      <md-divider md-inset class="md-caption"> Cognitive </md-divider>
+      <therbligs-list
+            therbligs="app.cognitiveTherbligs"
+            selected="app.selected"
+            on-selected="app.selectTherblig(therblig)">
+      </therbligs-list>
+      <md-divider md-inset class="md-caption"> Cognitive and Physical </md-divider>
+      <therbligs-list
+            therbligs="app.cogPhysTherbligs"
             selected="app.selected"
             on-selected="app.selectTherblig(therblig)">
       </therbligs-list>
