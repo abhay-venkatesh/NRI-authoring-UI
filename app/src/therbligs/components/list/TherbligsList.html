@@ -8,7 +8,7 @@
         dnd-effect-allowed="copy"
         >
         <span class="md-button md-raised" 
-           ng-click="$ctrl.editTherblig($event, therblig)"
+           ng-click="$ctrl.showDetails({therblig:therblig})"
            ng-class="{'selected': therblig === $ctrl.selected}" > 
           {{therblig.name}}
           </span>

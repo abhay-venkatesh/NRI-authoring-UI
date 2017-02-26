@@ -21,7 +21,8 @@
                 dnd-moved="plan.therbligList.splice($index, 1)"
                 dnd-effect-allowed="move"
                 >
-                <span class="md-button md-raised" ng-click="$ctrl.editTherblig($event, therblig)"
+                <span class="md-button md-raised" 
+                      ng-click="$ctrl.editTherblig($event, therblig, plan.therbligList)"
                    ng-class="{'selected': therblig === $ctrl.selected}">
                     {{ therblig.name }}
                 </span>

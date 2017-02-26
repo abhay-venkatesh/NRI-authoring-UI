@@ -3,8 +3,11 @@
 function TherbligsController($mdDialog, $scope) {
   var self = this;
   var therbligToEdit = {};
-  self.editTherblig = (ev, therblig) => {
+  var planTherbligList = [];
+  self.editTherblig = (ev, therblig, therbligList) => {
     therbligToEdit = therblig;
+    planTherbligList = [].concat(therbligList);
+    console.log(planTherbligList);
     $mdDialog.show({
           controller: EditModalController,
           templateUrl: 'src/therbligs/components/edit/EditModal.html',
@@ -23,7 +26,7 @@ function TherbligsController($mdDialog, $scope) {
     };
 
     $scope.delete = (therblig) => {
-      console.log(therblig);
+      console.log($scope.plan);
     };
   }}
 
