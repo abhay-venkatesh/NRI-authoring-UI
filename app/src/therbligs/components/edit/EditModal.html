@@ -17,62 +17,23 @@
           <!-- Use floating label instead of placeholder -->
               <label>Therblig Name</label>
               <md-icon class="name"></md-icon>
-              <input ng-model="therblig.name" type="text">
+              <input ng-model="therblig.name" type="text" placeholder="{{ therblig.name }}">
             </md-input-container>      
         </div>
       </div>
           <md-content layout-padding>
-        <div>
-          <form name="userForm">
+            <div>
+              <form name="therbligForm">
 
-            <div layout-gt-xs="row">
-              <md-input-container class="md-block" flex-gt-xs>
-                <label>Transport Empty</label>
-                <input ng-model="therblig.transportEmpty" type="text">
-              </md-input-container>
+                <div layout-gt-sm="row" ng-repeat="parameter in therblig.parameters">
+                  <md-input-container class="md-block" flex-gt-sm >
+                      <label>{{ parameter.name }}</label>
+                    <input ng-model="parameter.val" type="text">
+                  </md-input-container>
+                </div>
 
-              <md-input-container>
-                <label>Grasp</label>
-                <input ng-model="therblig.grasp" type="text">
-              </md-input-container>
+              </form>
             </div>
-
-            <div layout-gt-sm="row">
-              <md-input-container class="md-block" flex-gt-sm>
-                <label>Transport Loaded</label>
-                <input ng-model="therblig.transportLoaded">
-              </md-input-container>
-
-              <md-input-container class="md-block" flex-gt-sm>
-                <label>Release Load</label>
-                <input ng-model="therblig.releaseLoad">
-              </md-input-container>
-            </div>
-
-            <md-input-container class="md-block">
-              <label>Hold</label>
-              <input ng-model="therblig.hold">
-            </md-input-container>
-
-            <md-input-container class="md-block">
-              <label>Position</label>
-              <input ng-model="therblig.position">
-            </md-input-container>
-
-            <div layout-gt-sm="row">
-              <md-input-container class="md-block" flex-gt-sm>
-                <label>Preposition</label>
-                <input ng-model="therblig.preposition">
-              </md-input-container>
-
-              <md-input-container class="md-block" flex-gt-sm>
-                <label>Rest</label>
-                <input ng-model="therblig.rest">
-              </md-input-container>
-            </div>
-
-          </form>
-        </div>
       </md-content>
     </md-dialog-content>
 

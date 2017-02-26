@@ -2,7 +2,9 @@
 
 function TherbligsController($mdDialog, $scope) {
   var self = this;
-  self.editTherblig = (ev) => {
+  var therbligToEdit = {};
+  self.editTherblig = (ev, therblig) => {
+    therbligToEdit = therblig;
     $mdDialog.show({
           controller: EditModalController,
           templateUrl: 'src/therbligs/components/edit/EditModal.html',
@@ -10,25 +12,14 @@ function TherbligsController($mdDialog, $scope) {
           targetEvent: ev,
           clickOutsideToClose:true,
           fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-        })
-        .then(function(answer) {
-          $scope.status = 'You said the information was "' + answer + '".';
-        }, function() {
-          $scope.status = 'You cancelled the dialog.';
         });
   };
 
   function EditModalController($scope, $mdDialog) {
-    $scope.hide = function() {
-      $mdDialog.hide();
-    };
 
+    $scope.therblig = therbligToEdit;
     $scope.cancel = function() {
       $mdDialog.cancel();
-    };
-
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
     };
   }}
 

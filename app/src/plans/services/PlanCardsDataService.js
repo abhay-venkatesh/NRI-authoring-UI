@@ -11,12 +11,6 @@ function PlanCardsDataService($q) {
     {
       name: 'IKEA Kit',
       therbligList: [
-          {
-              name: 'Grasp',
-          },
-          {
-              name: 'Unload',
-          }
       ],
     },
     {
