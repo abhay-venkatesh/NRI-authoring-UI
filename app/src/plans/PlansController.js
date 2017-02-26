@@ -26,7 +26,7 @@ function PlansController($mdDialog, $scope) {
 
     $scope.delete = (therblig) => {
         var index = planTherbligList.indexOf(therblig);
-        planTherbligList.splice(index);
+        planTherbligList.splice(index, 1);
         $scope.cancel();
     };
   }}
