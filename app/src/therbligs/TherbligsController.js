@@ -21,6 +21,10 @@ function TherbligsController($mdDialog, $scope) {
     $scope.cancel = function() {
       $mdDialog.cancel();
     };
+
+    $scope.delete = (therblig) => {
+      console.log(therblig);
+    };
   }}
 
 export default [ '$mdDialog', '$scope', TherbligsController ];
