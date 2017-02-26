@@ -22,6 +22,7 @@ System.config({
     "angular": "github:angular/bower-angular@1.5.8",
     "angular-animate": "github:angular/bower-angular-animate@1.5.8",
     "angular-aria": "github:angular/bower-angular-aria@1.5.8",
+    "angular-filter": "npm:angular-filter@0.5.15",
     "angular-material": "github:angular/bower-material@master",
     "angular-messages": "github:angular/bower-angular-messages@1.5.8",
     "angular-mocks": "github:angular/bower-angular-mocks@1.5.8",
@@ -109,6 +110,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "npm:angular-filter@0.5.15": {
+      "angular": "npm:angular@1.6.2"
     },
     "npm:asn1.js@4.9.1": {
       "bn.js": "npm:bn.js@4.11.6",

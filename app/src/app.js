@@ -15,6 +15,7 @@ import Plans from 'src/plans/Plans';
 export default angular.module( 'starter-app', [
     'ngMaterial',
     'dndLists',
+    'ui.filters',
     Therbligs.name,
     Plans.name] )
   .config(($mdIconProvider, $mdThemingProvider) => {
