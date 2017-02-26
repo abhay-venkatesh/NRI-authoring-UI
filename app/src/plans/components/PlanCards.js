@@ -1,5 +1,5 @@
 'use strict';
-import TherbligsController from 'src/therbligs/TherbligsController';
+import PlansController from 'src/plans/PlansController';
 export default {
     name: 'planCards',
     config: {
@@ -7,6 +7,6 @@ export default {
         plans: '<', selected: '<', showDetails: '&onSelected'
       },
       templateUrl: 'src/plans/components/PlanCards.html',
-      controller: TherbligsController
+      controller: PlansController,
     }
 };

@@ -7,6 +7,6 @@ export default {
   config : {
     bindings: {  therbligs: '<', selected : '<', showDetails : '&onSelected' },
     templateUrl: 'src/therbligs/components/list/TherbligsList.html',
-    controller: TherbligsController
+    controller: TherbligsController,
   }
 };
