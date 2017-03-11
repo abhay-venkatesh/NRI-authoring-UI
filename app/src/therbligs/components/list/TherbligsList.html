@@ -1,5 +1,5 @@
 <!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
-<md-list dnd-list="$ctrl.therbligs" dnd-allowed-types="['therblig']">
+<md-list dnd-list="$ctrl.therbligs" dnd-allowed-types="['therblig.type']">
 
   <md-list-item ng-repeat="therblig in $ctrl.therbligs | unique: 'name'"
         dnd-draggable="therblig"
