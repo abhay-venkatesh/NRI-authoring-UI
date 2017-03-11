@@ -2,10 +2,12 @@
   <form ng-cloak>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Edit Therblig</h2>
+        <h2>Add Plan</h2>
         <span flex></span>
-        <md-button class="md-icon-button" aria-label="Close dialog" ng-click="cancel()">
-          <md-icon md-svg-src="../assets/svg/ic_done_white_24px.svg" aria-label="Close dialog"></md-icon>
+        <md-button class="md-icon-button" aria-label="Close dialog" 
+          ng-click="cancel()">
+          <md-icon md-svg-src="../assets/svg/ic_done_white_24px.svg" 
+            aria-label="Close dialog"></md-icon>
         </md-button>
       </div>
     </md-toolbar>
@@ -15,9 +17,10 @@
           <div class="md-inline-form">
             <md-input-container class="md-icon-float md-block">
           <!-- Use floating label instead of placeholder -->
-              <label>Therblig Name</label>
+              <label>Plan Name</label>
               <md-icon class="name"></md-icon>
-              <input ng-model="therblig.name" type="text" placeholder="{{ therblig.name }}">
+              <input ng-model="therblig.name" type="text" 
+              placeholder="{{ therblig.name }}">
             </md-input-container>      
         </div>
       </div>
@@ -25,7 +28,8 @@
             <div>
               <form name="therbligForm">
 
-                <div layout-gt-sm="row" ng-repeat="parameter in therblig.parameters">
+                <div layout-gt-sm="row" ng-repeat="parameter in 
+                  therblig.parameters">
                   <md-input-container class="md-block" flex-gt-sm >
                       <label>{{ parameter.name }}</label>
                     <input ng-model="parameter.val" type="text">
@@ -34,9 +38,6 @@
 
               </form>
             </div>
-            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-              <md-button class="md-raised md-warn" ng-click="delete(therblig)">Delete Therblig</md-button>
-            </section>
       </md-content>
     </md-dialog-content>
   </form>

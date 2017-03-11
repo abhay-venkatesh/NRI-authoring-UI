@@ -1,17 +1,30 @@
 <div class='md-padding plan-cards-container flipped' layout="row" flex >
   <div class='flipped'>
       <div layout="row" dnd-list="$ctrl.plans" dnd-allowed-types="['plan']">
+
+      <md-card class="plan-cards md-button" 
+        ng-click="$ctrl.addPlan($event, $ctrl.plans)">
+       <md-card-content >
+         <span></span>
+         <div layout="row">
+          <md-icon md-svg-src="../assets/svg/ic_note_add_black_24px.svg" 
+            aria-label="Close dialog">
+          </md-icon>
+         </div>
+       </md-card-content>
+      </md-card>
+
       <div class="parent" layout="column" ng-repeat="plan in $ctrl.plans" flex
           dnd-draggable="plan"
           dnd-type="'plan'"
           dnd-moved="$ctrl.plans.splice($index, 1)"
           dnd-effect-allowed="move">
+
         <md-card class="plan-cards">
           <md-card-title class="plan-card-title">
             {{ plan.name }}
           </md-card-title>
           <md-card-content class="plan-card-content">
-
             <! -- Therblig List in Plan -->
             <md-list dnd-list="plan.therbligList" dnd-allowed-types="['therblig']">
               <md-list-item 
@@ -22,13 +35,12 @@
                 dnd-effect-allowed="move"
                 >
                 <span class="md-button md-raised" 
-                      ng-click="$ctrl.editTherblig($event, therblig, plan.therbligList)"
-                   ng-class="{'selected': therblig === $ctrl.selected}">
+                 ng-click="$ctrl.editTherblig($event, therblig, plan.therbligList)"
+                 ng-class="{'selected': therblig === $ctrl.selected}">
                     {{ therblig.name }}
                 </span>
               </md-list-item>
             </md-list>
-
           </md-card-content>
         </md-card>
       </div>

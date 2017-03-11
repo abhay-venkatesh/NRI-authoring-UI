@@ -1,3 +1,6 @@
+"use strict";
+import SamplePlans from 'src/plans/services/SamplePlans';
+
 /**
  * PlanCards DataService
  * Uses embedded, hard-coded data model; acts asynchronously to simulate
@@ -7,28 +10,7 @@
  * @constructor
  */
 function PlanCardsDataService($q) {
-  var plans = [
-    {
-      name: 'IKEA Kit',
-      therbligList: [
-      ],
-    },
-    {
-      name: 'Rothschild Kit',
-      therbligList: [
-      ],
-    },
-    {
-      name: 'Roaster Kit',
-      therbligList: [
-      ],
-    },
-    {
-      name: 'Furniture Kit',
-      therbligList: [
-      ],
-    }
-  ];
+  var plans = SamplePlans.plans;
 
   // Promise-based API
   return {
