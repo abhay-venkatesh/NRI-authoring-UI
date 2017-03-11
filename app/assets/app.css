@@ -135,7 +135,7 @@ span.name {
 /* Plan Card Styles */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
-    width: 1px;
+    width: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
