@@ -63,6 +63,11 @@
         <plan-cards plans="app.plans" selected="app.selected"
           on-selected="app.selectTherblig(therblig)">
         </plan-cards>
+
+        <md-button class="md-fab md-fab-bottom-right" 
+          ng-click="app.addPlan($event, app.plans)"aria-label="Eat cake">
+          <span style="font-size: 2em;">+</span>
+        </md-button>
     </md-content>
 
   </div>

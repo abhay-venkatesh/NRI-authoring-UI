@@ -2,18 +2,6 @@
   <div class='flipped'>
       <div layout="row" dnd-list="$ctrl.plans" dnd-allowed-types="['plan']">
 
-      <md-card class="plan-cards md-button" 
-        ng-click="$ctrl.addPlan($event, $ctrl.plans)">
-       <md-card-content >
-         <span></span>
-         <div layout="row">
-          <md-icon md-svg-src="../assets/svg/ic_note_add_black_24px.svg" 
-            aria-label="Close dialog">
-          </md-icon>
-         </div>
-       </md-card-content>
-      </md-card>
-
       <div class="parent" layout="column" ng-repeat="plan in $ctrl.plans" flex
           dnd-draggable="plan"
           dnd-type="'plan'"

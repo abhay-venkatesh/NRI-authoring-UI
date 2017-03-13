@@ -38,9 +38,46 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
           self.plans = [].concat(plans);
         });
 
+  var therbligPlans = [];
+  var planToEdit = {};
+  var currentPlan = {};
+  self.addPlan = (ev, plans) => {
+    therbligPlans = plans;
+    currentPlan =
+    {
+      name: '',
+      therbligList: [
+      ],
+    };
+
+    plans.unshift(currentPlan);
+    $mdDialog.show({
+          controller: AddPlanController,
+          templateUrl: 'src/plans/components/AddPlanModal.tmpl.html',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose:true,
+          fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        });
+  };
+
   // *********************************
   // Internal methods
   // *********************************
+
+  function AddPlanController($scope, $mdDialog) {
+    $scope.done = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.plan = currentPlan;
+
+    $scope.delete = () => {
+      var index = therbligPlans.indexOf(currentPlan);
+      therbligPlans.splice(index, 1);
+      $scope.done();
+    };
+  }
 
   /**
    * Select the current therblig
