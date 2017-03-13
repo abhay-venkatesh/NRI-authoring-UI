@@ -8,7 +8,7 @@
 "use strict";
 
 function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
-  $mdDialog, $scope) {
+  $mdDialog, $scope, FileSaver, Blob) {
   var self = this;
 
   // Therblig Variables
@@ -88,6 +88,12 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
     };
   }
 
+  self.save = (plansToSave) => {
+    var textToSave = JSON.stringify(plansToSave);
+    var data = new Blob([textToSave], { type: 'text/json;charset=utf-8' });
+    FileSaver.saveAs(data, 'plans.json');
+  };
+
   /**
    * Select the current therblig
    * @param menuId
@@ -104,4 +110,4 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
 }
 
 export default ['TherbligsDataService', 'PlanCardsDataService','$mdSidenav',
-  '$mdDialog', '$scope', AppController];
+  '$mdDialog', '$scope', 'FileSaver', 'Blob', AppController];
