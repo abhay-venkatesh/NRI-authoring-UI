@@ -83,10 +83,7 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
     };
     $scope.plan = currentPlan;
 
-    // Delete the plan
-    $scope.delete = () => {
-      var index = therbligPlans.indexOf(currentPlan);
-      therbligPlans.splice(index, 1);
+    $scope.cancel = () => {
       $mdDialog.cancel();
     };
   }
