@@ -38,9 +38,16 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
           self.plans = [].concat(plans);
         });
 
+  // Therblig Plan Modal Variables
   var therbligPlans = [];
   var planToEdit = {};
   var currentPlan = {};
+
+  /*
+   * Method to add new plans.
+   * @param1 event service
+   * @param2 plans object
+   */
   self.addPlan = (ev, plans) => {
     therbligPlans = plans;
     $mdDialog.show({
@@ -57,12 +64,17 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   // Internal methods
   // *********************************
 
+  /*
+   * Controller for the modal to add plans
+   */
   function AddPlanController($scope, $mdDialog) {
+    // Once done, close modal and add the plan to the plan list
     $scope.done = function() {
       $mdDialog.cancel();
       therbligPlans.unshift(currentPlan);
     };
 
+    // Create new plan
     currentPlan =
     {
       name: '',
@@ -71,6 +83,7 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
     };
     $scope.plan = currentPlan;
 
+    // Delete the plan
     $scope.delete = () => {
       var index = therbligPlans.indexOf(currentPlan);
       therbligPlans.splice(index, 1);
