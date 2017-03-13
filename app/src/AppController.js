@@ -43,14 +43,6 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   var currentPlan = {};
   self.addPlan = (ev, plans) => {
     therbligPlans = plans;
-    currentPlan =
-    {
-      name: '',
-      therbligList: [
-      ],
-    };
-
-    plans.unshift(currentPlan);
     $mdDialog.show({
           controller: AddPlanController,
           templateUrl: 'src/plans/components/AddPlanModal.tmpl.html',
@@ -68,8 +60,15 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   function AddPlanController($scope, $mdDialog) {
     $scope.done = function() {
       $mdDialog.cancel();
+      therbligPlans.unshift(currentPlan);
     };
 
+    currentPlan =
+    {
+      name: '',
+      therbligList: [
+      ],
+    };
     $scope.plan = currentPlan;
 
     $scope.delete = () => {
