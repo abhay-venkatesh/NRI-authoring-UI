@@ -9,9 +9,18 @@
           dnd-effect-allowed="move">
 
         <md-card class="plan-cards">
-          <md-card-title class="plan-card-title">
-            {{ plan.name }}
-          </md-card-title>
+          <div layout="row">
+            <div flex="90">
+              <md-card-title class="plan-card-title">
+                {{ plan.name }}
+              </md-card-title>
+            </div>
+            <div>
+              <md-button class="md-icon-button" aria-label="More">
+                <md-icon md-svg-icon="../assets/svg/ic_more_vert_black_24px.svg"></md-icon>
+              </md-button>
+            </div>
+          </div>
           <md-card-content class="plan-card-content">
             <! -- Therblig List in Plan -->
             <md-list dnd-list="plan.therbligList" dnd-allowed-types="['therblig']">
