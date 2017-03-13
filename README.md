@@ -8,5 +8,5 @@ npm install
 sudo npm install live-server
 
 # Run Using
-$ live-server .
+$ live-server ./app
 ```
