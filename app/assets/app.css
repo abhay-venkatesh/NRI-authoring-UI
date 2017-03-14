@@ -165,3 +165,12 @@ span.name {
 
 .plan-card-content {
 }
+
+/* Input styles */
+input[type="file"] {
+    display: none;
+}
+
+.show-cursor {
+    cursor: pointer;
+}
