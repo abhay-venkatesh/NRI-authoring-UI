@@ -2,8 +2,15 @@
 
 function PlansController($mdDialog, $scope) {
   var self = this;
+
+  // Variables for Edit Therblig Method
   var therbligToEdit = {};
   var planTherbligList = [];
+  /*
+   * @param1 event service variable
+   * @param2 therblig that needs to be edited
+   * @param3 list of therbligs the therblig to be edited is in
+   */
   self.editTherblig = (ev, therblig, therbligList) => {
     therbligToEdit = therblig;
     planTherbligList = therbligList;
@@ -17,8 +24,14 @@ function PlansController($mdDialog, $scope) {
         });
   };
 
+  // Variables for Edit Plan method
   var planToEdit = {};
   var planList = [];
+  /*
+   * @param1 event service variable
+   * @param2 plan that needs to be edited
+   * @param3 list of plans that the plan that needs to be edited is in
+   */
   self.editPlan = (ev, plan, plans) => {
     planToEdit = plan;
     planList = plans;

@@ -1,13 +1,14 @@
 <div class='md-padding plan-cards-container flipped' layout="row" flex >
   <div class='flipped'>
+    <!-- Drag and Drop list of Plans -->
       <div layout="row" dnd-list="$ctrl.plans" dnd-allowed-types="['plan']">
-
       <div class="parent" layout="column" ng-repeat="plan in $ctrl.plans" flex
           dnd-draggable="plan"
           dnd-type="'plan'"
           dnd-moved="$ctrl.plans.splice($index, 1)"
           dnd-effect-allowed="move">
 
+        <!-- Title -->
         <md-card class="plan-cards">
           <div layout="row">
             <div flex="90">
