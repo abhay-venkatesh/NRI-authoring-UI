@@ -27,6 +27,10 @@
     <md-button class="md-icon-button" ng-click="app.save(app.plans)">
       <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg"></md-icon>
     </md-button>
+    <!-- Load Button -->
+    <md-button class="md-icon-button" >
+      <md-icon md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg"></md-icon>
+    </md-button>
   </md-toolbar>
 
   <!-- Container #2: Main Container -->
@@ -69,7 +73,7 @@
         </plan-cards>
 
         <md-button class="md-fab md-fab-bottom-right" 
-          ng-click="app.addPlan($event, app.plans)"aria-label="Eat cake">
+          ng-click="app.addPlan($event, app.plans)" aria-label="Add Plan">
           <span style="font-size: 2em;">+</span>
         </md-button>
     </md-content>

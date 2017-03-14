@@ -33,6 +33,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.32",
     "http-server": "npm:http-server@0.9.0",
     "json": "github:systemjs/plugin-json@0.1.2",
+    "ng-file-upload": "npm:ng-file-upload@12.2.13",
     "text": "github:systemjs/plugin-text@0.0.4",
     "traceur": "github:jmcriffey/bower-traceur@0.0.92",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.92",
@@ -334,6 +335,9 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "minimist": "npm:minimist@0.0.8",
       "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:ng-file-upload@12.2.13": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:opener@1.4.2": {

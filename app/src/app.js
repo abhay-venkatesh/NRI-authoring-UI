@@ -7,6 +7,7 @@ import 'angular-aria';
 import 'angular-material';
 import dndLists from 'src/dndLists';
 import AngularFileSaver from 'angular-file-saver';
+import ngFileUpload from 'ng-file-upload';
 import AppController from 'src/AppController';
 import Therbligs from 'src/therbligs/Therbligs';
 import Plans from 'src/plans/Plans';
@@ -16,6 +17,7 @@ export default angular.module( 'starter-app', [
     'dndLists',
     'ui.filters',
     'ngFileSaver',
+    'ngFileUpload',
     Therbligs.name,
     Plans.name] )
   .config(($mdIconProvider, $mdThemingProvider) => {
