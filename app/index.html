@@ -15,7 +15,7 @@
 
 <body ng-cloak layout="column" ng-controller="AppController as app">
 
-  <!-- Container #1 (see wireframe) -->
+  <!-- Container #1: Header Toolbar -->
   <md-toolbar layout="row" class="md-toolbar-tools">
     <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()"
                aria-label="Show Therblig List">
@@ -23,15 +23,16 @@
       </md-icon>
     </md-button>
     <h2 flex md-truncate>NSF NRI Authoring Environment</h1>
+    <!-- Save Button -->
     <md-button class="md-icon-button" ng-click="app.save(app.plans)">
       <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg"></md-icon>
     </md-button>
   </md-toolbar>
 
-  <!-- Container #2 -->
+  <!-- Container #2: Main Container -->
   <div flex layout="row">
 
-    <!-- Container #3 -->
+    <!-- Container #3: Therblig List-->
     <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
                 md-component-id="left" ng-click="app.toggleList()">
       <!-- Title -->
@@ -61,9 +62,8 @@
       </therbligs-list>
     </md-sidenav>
 
-    <!-- Container #4 -->
+    <!-- Container #4: Plan Cards -->
     <md-content flex id="content">
-        <!-- Plan Cards -->
         <plan-cards plans="app.plans" selected="app.selected"
           on-selected="app.selectTherblig(therblig)">
         </plan-cards>

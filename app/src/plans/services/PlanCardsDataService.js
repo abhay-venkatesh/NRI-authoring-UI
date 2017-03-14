@@ -10,6 +10,7 @@ import SamplePlans from 'src/plans/services/SamplePlans';
  * @constructor
  */
 function PlanCardsDataService($q) {
+  // Plan List
   var plans = [];
 
   // Promise-based API

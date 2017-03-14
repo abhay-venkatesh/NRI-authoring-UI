@@ -13,11 +13,9 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
 
   // Therblig Variables
   self.selected = null;
-  self.physicalTherbligs = [];
-  self.cognitiveTherbligs = [];
-  self.cogPhysTherbligs = [];
-  self.selectTherblig = selectTherblig;
-  self.toggleList = toggleTherbligsList;
+  self.physicalTherbligs = []; // List of physical therbligs
+  self.cognitiveTherbligs = []; // List of cognitive therbligs
+  self.cogPhysTherbligs = []; // List of cognitive-physical therbligs
 
   // Plan variables
   self.plans = [];
@@ -88,6 +86,10 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
     };
   }
 
+  /*
+   * Save plan.
+   * @param plan to save
+   */
   self.save = (plansToSave) => {
     var textToSave = JSON.stringify(plansToSave);
     var data = new Blob([textToSave], { type: 'text/json;charset=utf-8' });
@@ -98,13 +100,14 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
    * Select the current therblig
    * @param menuId
    */
-  function selectTherblig(therblig) {
+  self.selectTherblig = (therblig) => {
     self.selected = angular.isNumber(therblig) ? $scope.therbligs[therblig] : therblig;
-  }
+  };
+
   /**
    * Hide or Show the 'left' sideNav area
    */
-  function toggleTherbligsList() {
+  self.toggleList = () => {
     $mdSidenav('left').toggle();
   }
 }

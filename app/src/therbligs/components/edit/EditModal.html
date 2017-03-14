@@ -11,32 +11,31 @@
     </md-toolbar>
 
     <md-dialog-content>
+        <!-- Name Input -->
       <div class="md-dialog-content">
           <div class="md-inline-form">
             <md-input-container class="md-icon-float md-block">
-          <!-- Use floating label instead of placeholder -->
               <label>Therblig Name</label>
               <md-icon class="name"></md-icon>
               <input ng-model="therblig.name" type="text" placeholder="{{ therblig.name }}">
             </md-input-container>      
         </div>
       </div>
-          <md-content layout-padding>
-            <div>
-              <form name="therbligForm">
-
-                <div layout-gt-sm="row" ng-repeat="parameter in therblig.parameters">
-                  <md-input-container class="md-block" flex-gt-sm >
-                      <label>{{ parameter.name }}</label>
-                    <input ng-model="parameter.val" type="text">
-                  </md-input-container>
-                </div>
-
-              </form>
+      <!-- Therblig Parameter Form -->
+      <md-content layout-padding>
+        <div>
+          <form name="therbligForm">
+            <div layout-gt-sm="row" ng-repeat="parameter in therblig.parameters">
+              <md-input-container class="md-block" flex-gt-sm >
+                  <label>{{ parameter.name }}</label>
+                <input ng-model="parameter.val" type="text">
+              </md-input-container>
             </div>
-            <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-              <md-button class="md-raised md-warn" ng-click="delete(therblig)">Delete Therblig</md-button>
-            </section>
+          </form>
+        </div>
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+          <md-button class="md-raised md-warn" ng-click="delete(therblig)">Delete Therblig</md-button>
+        </section>
       </md-content>
     </md-dialog-content>
   </form>
