@@ -1,15 +1,18 @@
 <div class='md-padding plan-cards-container flipped' layout="row" flex >
   <div class='flipped'>
+
     <!-- Drag and Drop list of Plans -->
-      <div layout="row" dnd-list="$ctrl.plans" dnd-allowed-types="['plan']">
+      <div layout="row" dnd-list="$ctrl.plans"
+        dnd-horizontal-list="true" dnd-allowed-types="['plan']">
       <div class="parent" layout="column" ng-repeat="plan in $ctrl.plans" flex
           dnd-draggable="plan"
           dnd-type="'plan'"
           dnd-moved="$ctrl.plans.splice($index, 1)"
           dnd-effect-allowed="move">
 
-        <!-- Title -->
         <md-card class="plan-cards">
+
+          <!-- Title -->
           <div layout="row">
             <div flex="90">
               <md-card-title class="plan-card-title">
@@ -23,8 +26,9 @@
               </md-button>
             </div>
           </div>
+
+          <! -- Therblig List in Plan -->
           <md-card-content class="plan-card-content">
-            <! -- Therblig List in Plan -->
             <md-list dnd-list="plan.therbligList" dnd-allowed-types="['therblig']">
               <md-list-item 
                 ng-repeat="therblig in plan.therbligList"
@@ -41,6 +45,7 @@
               </md-list-item>
             </md-list>
           </md-card-content>
+
         </md-card>
       </div>
     </div>
