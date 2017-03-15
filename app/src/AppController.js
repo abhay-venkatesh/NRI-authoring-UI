@@ -8,7 +8,7 @@
 "use strict";
 
 function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
-  $mdDialog, $scope, FileSaver, Blob) {
+  $mdDialog, $scope, FileSaver, Blob, Upload, $timeout) {
   var self = this;
 
   // Therblig Variables
@@ -96,6 +96,22 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
     FileSaver.saveAs(data, 'plans.json');
   };
 
+  $scope.$watch('file', function(){
+    if($scope.file) {
+      var r = new FileReader();
+      r.onloadend = function(e){
+        var data = e.target.result;
+        //send your binary data via $http or $resource or do anything else with it
+        console.log(data);
+        self.plans = JSON.parse(data);
+      };
+      r.readAsText($scope.file);
+    }
+  });
+
+
+
+
   /**
    * Select the current therblig
    * @param menuId
@@ -109,8 +125,8 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
    */
   self.toggleList = () => {
     $mdSidenav('left').toggle();
-  }
+  };
 }
 
 export default ['TherbligsDataService', 'PlanCardsDataService','$mdSidenav',
-  '$mdDialog', '$scope', 'FileSaver', 'Blob', AppController];
+  '$mdDialog', '$scope', 'FileSaver', 'Blob', 'Upload', '$timeout', AppController];

@@ -24,14 +24,14 @@
     </md-button>
     <h2 flex md-truncate>NSF NRI Authoring Environment</h1>
     <!-- Save Button -->
-    <md-button class="md-icon-button" ng-click="app.save(app.plans)">
+    <md-button class="md-icon-button" ng-click="app.save(app.plans)"
+      aria-label="save">
       <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg"></md-icon>
     </md-button>
     <!-- Load Button -->
-    <label for="file-upload" class="md-icon-button show-cursor" >
+    <md-button ngf-select ng-model="file" class="md-icon-button">
       <md-icon md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg"></md-icon>
-    </label>
-    <input id="file-upload" type="file">
+    </md-button>
   </md-toolbar>
 
   <!-- Container #2: Main Container -->
