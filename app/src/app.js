@@ -10,7 +10,7 @@ import AngularFileSaver from 'angular-file-saver';
 import ngFileUpload from 'ng-file-upload';
 import AppController from 'src/AppController';
 import Therbligs from 'src/therbligs/Therbligs';
-import Plans from 'src/plans/Plans';
+import Tasks from 'src/tasks/Tasks';
 
 export default angular.module( 'starter-app', [
     'ngMaterial',
@@ -19,7 +19,7 @@ export default angular.module( 'starter-app', [
     'ngFileSaver',
     'ngFileUpload',
     Therbligs.name,
-    Plans.name] )
+    Tasks.name] )
   .config(($mdIconProvider, $mdThemingProvider) => {
 
     $mdIconProvider

@@ -1,13 +1,13 @@
 /**
  * Main App Controller for the Angular Material Starter App
  * @param TherbligsDataService
- * @param PlanCardsDataService
+ * @param TaskCardsDataService
  * @param $mdSidenav
  * @constructor
  */
 "use strict";
 
-function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
+function AppController(TherbligsDataService, TaskCardsDataService, $mdSidenav,
   $mdDialog, $scope, FileSaver, Blob, Upload, $timeout) {
   var self = this;
 
@@ -17,8 +17,8 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   self.cognitiveTherbligs = []; // List of cognitive therbligs
   self.cogPhysTherbligs = []; // List of cognitive-physical therbligs
 
-  // Plan variables
-  self.plans = [];
+  // Task variables
+  self.tasks = [];
 
   // Load all library therbligs
   TherbligsDataService
@@ -29,28 +29,28 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
           self.cogPhysTherbligs = [].concat(therbligs.cogPhysTherbligs);
         });
 
-  // Load all library plans
-  PlanCardsDataService
-        .loadAllPlans()
-        .then( function(plans) {
-          self.plans = [].concat(plans);
+  // Load all library Tasks
+  TaskCardsDataService
+        .loadAllTasks()
+        .then( function(tasks) {
+          self.tasks = [].concat(tasks);
         });
 
-  // Therblig Plan Modal Variables
-  var therbligPlans = [];
-  var planToEdit = {};
-  var currentPlan = {};
+  // Therblig Task Modal Variables
+  var therbligTasks = [];
+  var taskToEdit = {};
+  var currentTask = {};
 
   /*
-   * Method to add new plans.
+   * Method to add new tasks.
    * @param1 event service
-   * @param2 plans object
+   * @param2 tasks object
    */
-  self.addPlan = (ev, plans) => {
-    therbligPlans = plans;
+  self.addTask = (ev, tasks) => {
+    therbligTasks = tasks;
     $mdDialog.show({
-          controller: AddPlanController,
-          templateUrl: 'src/plans/components/AddPlanModal.tmpl.html',
+          controller: AddTaskController,
+          templateUrl: 'src/tasks/components/AddTaskModal.tmpl.html',
           parent: angular.element(document.body),
           targetEvent: ev,
           clickOutsideToClose:true,
@@ -63,23 +63,23 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   // *********************************
 
   /*
-   * Controller for the modal to add plans
+   * Controller for the modal to add tasks
    */
-  function AddPlanController($scope, $mdDialog) {
-    // Once done, close modal and add the plan to the plan list
+  function AddTaskController($scope, $mdDialog) {
+    // Once done, close modal and add the task to the task list
     $scope.done = function() {
       $mdDialog.cancel();
-      therbligPlans.unshift(currentPlan);
+      therbligTasks.unshift(currentTask);
     };
 
-    // Create new plan
-    currentPlan =
+    // Create new task
+    currentTask =
     {
       name: '',
       therbligList: [
       ],
     };
-    $scope.plan = currentPlan;
+    $scope.task = currentTask;
 
     $scope.cancel = () => {
       $mdDialog.cancel();
@@ -87,13 +87,13 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   }
 
   /*
-   * Save plan.
-   * @param plan to save
+   * Save task.
+   * @param task to save
    */
-  self.save = (plansToSave) => {
-    var textToSave = JSON.stringify(plansToSave);
+  self.save = (tasksToSave) => {
+    var textToSave = JSON.stringify(tasksToSave);
     var data = new Blob([textToSave], { type: 'text/json;charset=utf-8' });
-    FileSaver.saveAs(data, 'plans.json');
+    FileSaver.saveAs(data, 'tasks.json');
   };
 
   $scope.$watch('file', function(){
@@ -103,7 +103,7 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
         var data = e.target.result;
         //send your binary data via $http or $resource or do anything else with it
         console.log(data);
-        self.plans = JSON.parse(data);
+        self.tasks = JSON.parse(data);
       };
       r.readAsText($scope.file);
     }
@@ -128,5 +128,5 @@ function AppController(TherbligsDataService, PlanCardsDataService, $mdSidenav,
   };
 }
 
-export default ['TherbligsDataService', 'PlanCardsDataService','$mdSidenav',
+export default ['TherbligsDataService', 'TaskCardsDataService','$mdSidenav',
   '$mdDialog', '$scope', 'FileSaver', 'Blob', 'Upload', '$timeout', AppController];

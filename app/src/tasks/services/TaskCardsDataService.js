@@ -1,25 +1,25 @@
 "use strict";
-import SamplePlans from 'src/plans/services/SamplePlans';
+import SampleTasks from 'src/tasks/services/SampleTasks';
 
 /**
- * PlanCards DataService
+ * TaskCards DataService
  * Uses embedded, hard-coded data model; acts asynchronously to simulate
  * remote data service call(s).
  *
  * @returns {{loadAll: Function}}
  * @constructor
  */
-function PlanCardsDataService($q) {
-  // Plan List
-  var plans = [];
+function TaskCardsDataService($q) {
+  // Task List
+  var tasks = [];
 
   // Promise-based API
   return {
-    loadAllPlans: function() {
+    loadAllTasks: function() {
       // Simulate async nature of real remote calls
-      return $q.when(plans);
+      return $q.when(tasks);
     }
   };
 }
 
-export default ['$q', PlanCardsDataService];
+export default ['$q', TaskCardsDataService];

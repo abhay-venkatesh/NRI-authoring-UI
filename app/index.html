@@ -24,7 +24,7 @@
     </md-button>
     <h2 flex md-truncate>NSF NRI Authoring Environment</h1>
     <!-- Save Button -->
-    <md-button class="md-icon-button" ng-click="app.save(app.plans)"
+    <md-button class="md-icon-button" ng-click="app.save(app.tasks)"
       aria-label="save">
       <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg"></md-icon>
     </md-button>
@@ -67,14 +67,14 @@
       </therbligs-list>
     </md-sidenav>
 
-    <!-- Container #4: Plan Cards -->
+    <!-- Container #4: Task  Cards -->
     <md-content flex id="content">
-        <plan-cards plans="app.plans" selected="app.selected"
+        <task-cards tasks="app.tasks" selected="app.selected"
           on-selected="app.selectTherblig(therblig)">
-        </plan-cards>
+        </task-cards>
 
         <md-button class="md-fab md-fab-bottom-right" 
-          ng-click="app.addPlan($event, app.plans)" aria-label="Add Plan">
+          ng-click="app.addTask($event, app.tasks)" aria-label="Add Task">
           <span style="font-size: 2em;">+</span>
         </md-button>
     </md-content>

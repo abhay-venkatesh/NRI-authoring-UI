@@ -1,11 +1,11 @@
 "use strict";
 
-function PlansController($mdDialog, $scope) {
+function TasksController($mdDialog, $scope) {
   var self = this;
 
   // Variables for Edit Therblig Method
   var therbligToEdit = {};
-  var planTherbligList = [];
+  var taskTherbligList = [];
   /*
    * @param1 event service variable
    * @param2 therblig that needs to be edited
@@ -13,7 +13,7 @@ function PlansController($mdDialog, $scope) {
    */
   self.editTherblig = (ev, therblig, therbligList) => {
     therbligToEdit = therblig;
-    planTherbligList = therbligList;
+    taskTherbligList = therbligList;
     $mdDialog.show({
           controller: EditModalController,
           templateUrl: 'src/therbligs/components/edit/EditModal.html',
@@ -24,20 +24,20 @@ function PlansController($mdDialog, $scope) {
         });
   };
 
-  // Variables for Edit Plan method
-  var planToEdit = {};
-  var planList = [];
+  // Variables for Edit Task method
+  var taskToEdit = {};
+  var taskList = [];
   /*
    * @param1 event service variable
-   * @param2 plan that needs to be edited
-   * @param3 list of plans that the plan that needs to be edited is in
+   * @param2 task that needs to be edited
+   * @param3 list of tasks that the task that needs to be edited is in
    */
-  self.editPlan = (ev, plan, plans) => {
-    planToEdit = plan;
-    planList = plans;
+  self.editTask = (ev, task, tasks) => {
+    taskToEdit = task;
+    taskList = tasks;
     $mdDialog.show({
-          controller: EditPlanController,
-          templateUrl: 'src/plans/components/EditPlanModal.tmpl.html',
+          controller: EditTaskController,
+          templateUrl: 'src/tasks/components/EditTaskModal.tmpl.html',
           parent: angular.element(document.body),
           targetEvent: ev,
           clickOutsideToClose:true,
@@ -52,24 +52,24 @@ function PlansController($mdDialog, $scope) {
     };
 
     $scope.delete = (therblig) => {
-        var index = planTherbligList.indexOf(therblig);
-        planTherbligList.splice(index, 1);
+        var index = taskTherbligList.indexOf(therblig);
+        taskTherbligList.splice(index, 1);
         $scope.cancel();
     };
   }
 
-  function EditPlanController($scope, $mdDialog) {
-    $scope.plan = planToEdit;
+  function EditTaskController($scope, $mdDialog) {
+    $scope.task = taskToEdit;
     $scope.cancel = function() {
       $mdDialog.cancel();
     };
 
-    $scope.delete = (plan) => {
-        var index = planList.indexOf(plan);
-        planList.splice(index, 1);
+    $scope.delete = (task) => {
+        var index = taskList.indexOf(task);
+        taskList.splice(index, 1);
         $scope.cancel();
     };
   }
 }
 
-export default [ '$mdDialog', '$scope', PlansController ];
+export default [ '$mdDialog', '$scope', TasksController ];

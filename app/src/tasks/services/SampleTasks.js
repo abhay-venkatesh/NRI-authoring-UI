@@ -1,6 +1,6 @@
 'use strict';
 
-var plans = [
+var tasks = [
     {
       name: 'IKEA Kit',
       therbligList: [
@@ -23,4 +23,4 @@ var plans = [
     }
 ];
 
-export default { plans };
+export default { tasks };

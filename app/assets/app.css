@@ -132,7 +132,7 @@ span.name {
   padding-left: 5px;
 }
 
-/* Plan Card Styles */
+/* Task Card Styles */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 4px;
@@ -144,7 +144,7 @@ span.name {
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-.plan-cards-container {
+.task-cards-container {
   overflow-y: auto;
 }
 
@@ -154,16 +154,16 @@ span.name {
   -webkit-transform:rotateX(180deg); /* Safari and Chrome */
 }
 
-.plan-cards {
+.task-cards {
   width: 350px;
 }
 
-.plan-card-title {
+.task-card-title {
   margin-left: auto;
   margin-right: auto;
 }
 
-.plan-card-content {
+.task-card-content {
 }
 
 /* Input styles */

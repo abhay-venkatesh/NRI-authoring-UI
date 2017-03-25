@@ -4,7 +4,7 @@
     <!-- Header -->
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Add Plan</h2>
+        <h2>Add Task</h2>
         <span flex></span>
         <md-button class="md-icon-button" aria-label="Close dialog" 
           ng-click="done()">
@@ -19,9 +19,9 @@
       <div class="md-dialog-content">
           <div class="md-inline-form">
             <md-input-container class="md-icon-float md-block">
-              <label>Plan Name</label>
+              <label>Task Name</label>
               <md-icon class="name"></md-icon>
-              <input ng-model="plan.name" type="text" placeholder="{{ plan.name }}"
+              <input ng-model="task.name" type="text" placeholder="{{ task.name }}"
                 autofocus>
             </md-input-container>      
         </div>
