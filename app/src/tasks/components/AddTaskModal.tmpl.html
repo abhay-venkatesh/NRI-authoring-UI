@@ -7,8 +7,8 @@
         <h2>Add Task</h2>
         <span flex></span>
         <md-button class="md-icon-button" aria-label="Close dialog" 
-          ng-click="done()">
-          <md-icon md-svg-src="../assets/svg/ic_done_white_24px.svg" 
+          ng-click="cancel()">
+          <md-icon md-svg-src="../assets/svg/ic_close_white_24px.svg" 
             aria-label="Close dialog"></md-icon>
         </md-button>
       </div>
@@ -21,14 +21,15 @@
             <md-input-container class="md-icon-float md-block">
               <label>Task Name</label>
               <md-icon class="name"></md-icon>
-              <input ng-model="task.name" type="text" placeholder="{{ task.name }}"
-                autofocus>
+              <input ng-model="task.name" type="text" 
+                placeholder="{{ task.name }}">
             </md-input-container>      
         </div>
       </div>
       <md-content layout-padding>
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button class="md-raised md-warn" ng-click="cancel()">Cancel</md-button>
+        <section layout="row" layout-sm="column" layout-align="center center" 
+          layout-wrap>
+          <md-button class="md-raised md-primary" ng-click="done()">Done</md-button>
         </section>
       </md-content>
     </md-dialog-content>
