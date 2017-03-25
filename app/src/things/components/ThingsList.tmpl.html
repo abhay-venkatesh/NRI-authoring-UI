@@ -1,0 +1,18 @@
+
+<!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
+<md-list dnd-list="$ctrl.things" dnd-allowed-types="['thing.type']">
+
+  <!-- List of Things -->
+  <md-list-item ng-repeat="thing in $ctrl.things | unique: 'name'"
+        dnd-draggable="thing"
+        dnd-type="'thing'"
+        dnd-moved="$ctrl.things.splice($index, 1)"
+        dnd-effect-allowed="copy"
+        >
+        <span class="md-button md-raised" 
+           ng-click="$ctrl.showDetails({thing:thing})"
+           ng-class="{'selected': thing === $ctrl.selected}" > 
+          {{thing.name}}
+          </span>
+  </md-list-item>
+</md-list>
