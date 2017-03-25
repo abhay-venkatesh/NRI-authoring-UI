@@ -41,31 +41,34 @@
     <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
                 md-component-id="left" ng-click="app.toggleList()">
       <!-- Title -->
-      <md-toolbar layout="row" layout-align="center" class="md-accent" >
-        <h2 class="md-title"> Therbligs </h2>
-      </md-toolbar>
+      <md-tabs md-dynamic-height="true">
+        <md-tab label="therbligs">
+          
+          <br>
+          <md-divider md-inset class="md-caption"> Physical </md-divider>
+          <therbligs-list
+                therbligs="app.physicalTherbligs"
+                selected="app.selected"
+                on-selected="app.selectTherblig(therblig)">
+          </therbligs-list>
+          <md-divider md-inset class="md-caption"> Cognitive </md-divider>
+          <therbligs-list
+                therbligs="app.cognitiveTherbligs"
+                selected="app.selected"
+                on-selected="app.selectTherblig(therblig)">
+          </therbligs-list>
+          <md-divider md-inset class="md-caption"> Cognitive and Physical </md-divider>
+          <therbligs-list
+                therbligs="app.cogPhysTherbligs"
+                selected="app.selected"
+                on-selected="app.selectTherblig(therblig)">
+          </therbligs-list>
+        </md-tab>
+        <md-tab label="things">
+        </md-tab>
+      </md-tabs>
 
       <!-- Custom TherbligList component -->
-      <br>
-      <md-divider md-inset class="md-caption"> Physical </md-divider>
-
-      <therbligs-list
-            therbligs="app.physicalTherbligs"
-            selected="app.selected"
-            on-selected="app.selectTherblig(therblig)">
-      </therbligs-list>
-      <md-divider md-inset class="md-caption"> Cognitive </md-divider>
-      <therbligs-list
-            therbligs="app.cognitiveTherbligs"
-            selected="app.selected"
-            on-selected="app.selectTherblig(therblig)">
-      </therbligs-list>
-      <md-divider md-inset class="md-caption"> Cognitive and Physical </md-divider>
-      <therbligs-list
-            therbligs="app.cogPhysTherbligs"
-            selected="app.selected"
-            on-selected="app.selectTherblig(therblig)">
-      </therbligs-list>
     </md-sidenav>
 
     <!-- Container #4: Task  Cards -->
