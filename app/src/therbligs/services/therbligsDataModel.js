@@ -5,8 +5,6 @@ var position = {
   val: '',
 };
 
-var things = [];
-
 var physicalTherbligs = [
     {
       name: 'Transport Empty',
@@ -25,6 +23,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
+      things: []
     },
     {
       name: 'Grasp',
@@ -39,6 +38,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
+     things: []
     },
     {
       name: 'Transport Loaded',
@@ -57,6 +57,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
+     things: []
     },
     {
       name: 'Release Load',
@@ -67,6 +68,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
+     things: []
     },
     {
       name: 'Hold',
@@ -80,6 +82,7 @@ var physicalTherbligs = [
           val: ''
         } ,
       ],
+     things: []
     },
     {
       name: 'Position',
@@ -94,6 +97,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
+     things: []
     },
     {
       name: 'Preposition',
@@ -108,6 +112,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
+     things: []
     },
     {
       name: 'Rest',
@@ -122,6 +127,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
+     things: []
     },
 ];
 
@@ -179,11 +185,13 @@ var cognitiveTherbligs = [
       regionBoundaries,
       searchRoutine,
     ],
+    things: []
   },
   {
     name: 'Find',
     type: 'cognitive',
     parameters: [],
+    things: []
   },
   {
     name: 'Select',
@@ -193,6 +201,7 @@ var cognitiveTherbligs = [
       selectCriteria,
       decisionConstraints,
     ],
+    things: []
   },
   {
     name: 'Inspect',
@@ -201,6 +210,7 @@ var cognitiveTherbligs = [
       object,
       qualityConditions,
     ],
+    things: []
   },
   {
     name: 'Plan',
@@ -210,6 +220,7 @@ var cognitiveTherbligs = [
       goalState,
       planningConstraints,
     ],
+    things: []
   },
 ];
 
@@ -251,6 +262,7 @@ var cogPhysTherbligs = [
       goalCriteria,
       assemblyConstraints,
     ],
+    things: []
   },
   {
     name: 'Disassemble',
@@ -260,6 +272,7 @@ var cogPhysTherbligs = [
       goalCriteria,
       disassemblyConstraints,
     ],
+    things: []
   },
   {
     name: 'Use',
@@ -268,6 +281,7 @@ var cogPhysTherbligs = [
       tool,
       toolMethods,
     ],
+    things: []
   },
 ];
 
