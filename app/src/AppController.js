@@ -7,8 +7,9 @@
  */
 "use strict";
 
-function AppController(TherbligsDataService, TaskCardsDataService, $mdSidenav,
-  $mdDialog, $scope, FileSaver, Blob, Upload, $timeout) {
+function AppController(TherbligsDataService, TaskCardsDataService,
+  ThingsDataService, $mdSidenav, $mdDialog, $scope, FileSaver, Blob, Upload,
+  $timeout) {
   var self = this;
 
   // Therblig Variables
@@ -128,5 +129,6 @@ function AppController(TherbligsDataService, TaskCardsDataService, $mdSidenav,
   };
 }
 
-export default ['TherbligsDataService', 'TaskCardsDataService','$mdSidenav',
-  '$mdDialog', '$scope', 'FileSaver', 'Blob', 'Upload', '$timeout', AppController];
+export default ['TherbligsDataService', 'TaskCardsDataService',
+  'ThingsDataService','$mdSidenav', '$mdDialog', '$scope', 'FileSaver', 'Blob',
+  'Upload', '$timeout', AppController];

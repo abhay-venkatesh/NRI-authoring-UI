@@ -5,7 +5,7 @@ export default {
   name : 'thingsList',
   config : {
     bindings: {  things: '<', selected : '<', showDetails : '&onSelected' },
-    templateUrl: 'src/things/components/list/ThingsList.html',
+    templateUrl: 'src/things/components/ThingsList.tmpl.html',
     controller: ThingsController,
   }
 };
