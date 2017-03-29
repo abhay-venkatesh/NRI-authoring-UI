@@ -12,6 +12,13 @@ function AppController(TherbligsDataService, TaskCardsDataService,
   $timeout) {
   var self = this;
 
+  // Things Variables
+  self.things = [];
+
+  // Load all library things
+  ThingsDataService
+    .
+
   // Therblig Variables
   self.selected = null;
   self.physicalTherbligs = []; // List of physical therbligs
@@ -23,12 +30,12 @@ function AppController(TherbligsDataService, TaskCardsDataService,
 
   // Load all library therbligs
   TherbligsDataService
-        .loadAllTherbligs()
-        .then( function(therbligs) {
-          self.physicalTherbligs = [].concat(therbligs.physicalTherbligs);
-          self.cognitiveTherbligs = [].concat(therbligs.cognitiveTherbligs);
-          self.cogPhysTherbligs = [].concat(therbligs.cogPhysTherbligs);
-        });
+    .loadAllTherbligs()
+    .then( function(therbligs) {
+      self.physicalTherbligs = [].concat(therbligs.physicalTherbligs);
+      self.cognitiveTherbligs = [].concat(therbligs.cognitiveTherbligs);
+      self.cogPhysTherbligs = [].concat(therbligs.cogPhysTherbligs);
+    });
 
   // Load all library Tasks
   TaskCardsDataService
