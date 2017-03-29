@@ -19,13 +19,13 @@ var things = [
     ],
   },
   {
-    name: 'B',
+    name: 'C',
     parameters: [
       position,
     ],
   },
   {
-    name: 'B',
+    name: 'D',
     parameters: [
       position,
     ],
