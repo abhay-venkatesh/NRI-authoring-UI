@@ -18,6 +18,18 @@ var things = [
       position,
     ],
   },
+  {
+    name: 'B',
+    parameters: [
+      position,
+    ],
+  },
+  {
+    name: 'B',
+    parameters: [
+      position,
+    ],
+  }
 ];
 
 export default { things };
