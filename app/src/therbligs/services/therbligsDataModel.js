@@ -5,6 +5,8 @@ var position = {
   val: '',
 };
 
+var things = [];
+
 var physicalTherbligs = [
     {
       name: 'Transport Empty',
