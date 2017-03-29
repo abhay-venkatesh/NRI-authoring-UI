@@ -7,15 +7,17 @@ var position = {
 
 var things = [
   {
-    name: 'Object A',
+    name: 'A',
     parameters: [
       position,
     ],
   },
   {
-    name: 'Object B',
+    name: 'B',
     parameters: [
       position,
     ],
   },
 ];
+
+export default { things };

@@ -17,7 +17,10 @@ function AppController(TherbligsDataService, TaskCardsDataService,
 
   // Load all library things
   ThingsDataService
-    .
+    .loadAllThings()
+    .then(function(allThings) {
+      self.things = [].concat(allThings.things);
+    });
 
   // Therblig Variables
   self.selected = null;
@@ -31,7 +34,7 @@ function AppController(TherbligsDataService, TaskCardsDataService,
   // Load all library therbligs
   TherbligsDataService
     .loadAllTherbligs()
-    .then( function(therbligs) {
+    .then(function(therbligs) {
       self.physicalTherbligs = [].concat(therbligs.physicalTherbligs);
       self.cognitiveTherbligs = [].concat(therbligs.cognitiveTherbligs);
       self.cogPhysTherbligs = [].concat(therbligs.cogPhysTherbligs);

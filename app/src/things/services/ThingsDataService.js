@@ -1,8 +1,8 @@
 "use strict";
-import allThings from 'src/things/services/thingsDataModel';
+import allThings from 'src/things/services/ThingsDataModel';
 
 function ThingsDataService($q) {
-  var things = allThings.things;
+  var things = allThings;
 
   // Promise-based API
   return {
