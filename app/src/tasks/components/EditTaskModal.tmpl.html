@@ -23,7 +23,7 @@
               <label>Task Name</label>
               <md-icon class="name"></md-icon>
               <input ng-model="task.name" type="text" placeholder="{{ task.name }}"
-                md-autofocus>
+                md-autofocus ng-keyup="$event.keyCode == 13 && cancel()">
             </md-input-container>      
         </div>
       </div>

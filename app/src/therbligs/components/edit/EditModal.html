@@ -17,16 +17,19 @@
             <md-input-container class="md-icon-float md-block">
               <label>Therblig Name</label>
               <md-icon class="name"></md-icon>
-              <input ng-model="therblig.name" type="text" placeholder="{{ therblig.name }}">
+              <input ng-model="therblig.name" type="text" 
+              placeholder="{{ therblig.name }}" md-autofocus
+              ng-keyup="$event.keyCode == 13 && cancel()">
             </md-input-container>      
         </div>
       </div>
       <!-- Therblig Parameter Form -->
       <md-content layout-padding>
         <div>
-          <form name="therbligForm">
+            <form name="therbligForm" >
             <div layout-gt-sm="row" ng-repeat="parameter in therblig.parameters">
-              <md-input-container class="md-block" flex-gt-sm >
+              <md-input-container class="md-block" flex-gt-sm 
+                      ng-keyup="$event.keyCode == 13 && cancel()">
                   <label>{{ parameter.name }}</label>
                 <input ng-model="parameter.val" type="text">
               </md-input-container>
