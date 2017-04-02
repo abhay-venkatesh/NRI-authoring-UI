@@ -11,24 +11,28 @@ var things = [
     parameters: [
       position,
     ],
+    type: 'thing'
   },
   {
     name: 'B',
     parameters: [
       position,
     ],
+    type: 'thing'
   },
   {
     name: 'C',
     parameters: [
       position,
     ],
+    type: 'thing'
   },
   {
     name: 'D',
     parameters: [
       position,
     ],
+    type: 'thing'
   }
 ];
 
