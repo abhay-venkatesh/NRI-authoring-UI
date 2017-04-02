@@ -34,7 +34,12 @@
           </form>
         </div>
         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button class="md-raised md-warn" ng-click="delete(therblig)">Delete Therblig</md-button>
+          <md-button class="md-raised md-primary" ng-click="cancel()">Done</md-button>
+          <md-button class="md-icon-button" aria-label="Close dialog" 
+            ng-click="delete(therblig)">
+            <md-icon md-svg-src="../assets/svg/ic_delete_black_24px.svg" 
+              aria-label="Delete Therblig"></md-icon>
+          </md-button>
         </section>
       </md-content>
     </md-dialog-content>
