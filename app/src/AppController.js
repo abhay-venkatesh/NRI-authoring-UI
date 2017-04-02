@@ -28,9 +28,6 @@ function AppController(TherbligsDataService, TaskCardsDataService,
   self.cognitiveTherbligs = []; // List of cognitive therbligs
   self.cogPhysTherbligs = []; // List of cognitive-physical therbligs
 
-  // Task variables
-  self.tasks = [];
-
   // Load all library therbligs
   TherbligsDataService
     .loadAllTherbligs()
@@ -39,6 +36,9 @@ function AppController(TherbligsDataService, TaskCardsDataService,
       self.cognitiveTherbligs = [].concat(therbligs.cognitiveTherbligs);
       self.cogPhysTherbligs = [].concat(therbligs.cogPhysTherbligs);
     });
+
+  // Task variables
+  self.tasks = [];
 
   // Load all library Tasks
   TaskCardsDataService
@@ -113,7 +113,6 @@ function AppController(TherbligsDataService, TaskCardsDataService,
       r.onloadend = function(e){
         var data = e.target.result;
         //send your binary data via $http or $resource or do anything else with it
-        console.log(data);
         self.tasks = JSON.parse(data);
       };
       r.readAsText($scope.file);

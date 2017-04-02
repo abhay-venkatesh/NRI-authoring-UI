@@ -42,20 +42,17 @@
                  ng-class="{'selected': therblig === $ctrl.selected}">
                     {{ therblig.name }}
 
-                    <!-- Things -->
-                    <md-list dnd-list="therblig.things" 
-                      dnd-horizontal-lists="true" >
-                      <!-- 
-                      <md-list-item ng-repeat"thing in therblig.things"
-                        dnd-draggable="thing"
-                        dnd-moved="therblig.things.splice($index, 1)">
-                          <span class="md-button md-fab md-mini" 
-                             style="text-align:center"> 
-                            {{ thing.name }}
-                            </span>
-                      </md-list-item>
-                      -->
+                  <!-- Things -->
+                  <md-list dnd-list="therblig.things">
+                    <md-list-item ng-repeat="thing in therblig.things"
+                      dnd-draggable="thing"
+                      dnd-moved="therblig.things.splice($index, 1)">
+                      <span class="md-button md-primary md-raised" 
+                        style="text-align:center">
+                        {{ thing.name }}
+                      </span>
                     </md-list>
+                  </md-list>
 
                 </span>
               </md-list-item>
