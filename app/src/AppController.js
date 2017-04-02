@@ -73,6 +73,7 @@ function AppController(TherbligsDataService, TaskCardsDataService,
   // Internal methods
   // *********************************
 
+
   /*
    * Controller for the modal to add tasks
    */
@@ -118,8 +119,6 @@ function AppController(TherbligsDataService, TaskCardsDataService,
       r.readAsText($scope.file);
     }
   });
-
-
 
 
   /**

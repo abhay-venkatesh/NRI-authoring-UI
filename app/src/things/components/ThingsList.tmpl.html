@@ -9,7 +9,7 @@
         dnd-effect-allowed="copy"
         >
         <span class="md-button md-raised md-primary" 
-           ng-click="$ctrl.showDetails({thing:thing})"
+           ng-click="$ctrl.editThing($event, thing)"
            ng-class="{'selected': thing === $ctrl.selected}" 
            style="text-align:center"> 
           {{thing.name}}
