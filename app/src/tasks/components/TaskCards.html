@@ -43,7 +43,8 @@
 
                   <!-- Things -->
                   <md-list dnd-list="therblig.things"> 
-                    <md-list-item ng-repeat="thing in therblig.things"
+                    <md-list-item 
+                           ng-repeat="thing in therblig.things | limitTo: 1"
                       dnd-draggable="thing"
                       dnd-moved="therblig.things.splice($index, 1)"
                       dnd-effect-allowed="move">
