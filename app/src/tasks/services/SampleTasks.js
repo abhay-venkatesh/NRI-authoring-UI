@@ -11,6 +11,9 @@ var tasks = [
         {
           name: 'Transport Empty',
           type: 'physical',
+          allowedTypes: [
+            'thing'
+          ],
           parameters: [
             position,
             { name: 'Orientation',
@@ -31,6 +34,7 @@ var tasks = [
               parameters: [
                 position,
               ],
+              type: 'thing'
             },
           ]
         }
