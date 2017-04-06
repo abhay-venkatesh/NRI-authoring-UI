@@ -33,6 +33,34 @@ var things = [
       position,
     ],
     type: 'thing'
+  },
+  {
+    name: 'E',
+    parameters: [
+      position,
+    ],
+    type: 'thing'
+  },
+  {
+    name: 'F',
+    parameters: [
+      position,
+    ],
+    type: 'thing'
+  },
+  {
+    name: 'G',
+    parameters: [
+      position,
+    ],
+    type: 'thing'
+  },
+  {
+    name: 'H',
+    parameters: [
+      position,
+    ],
+    type: 'thing'
   }
 ];
 
