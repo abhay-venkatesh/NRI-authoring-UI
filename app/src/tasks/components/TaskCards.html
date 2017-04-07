@@ -6,7 +6,7 @@
         dnd-horizontal-list="true" dnd-allowed-types="['task']">
       <div class="parent" layout="column" ng-repeat="task in $ctrl.tasks" flex
           dnd-draggable="task"
-          dnd-type="'task'"
+          dnd-type="task"
           dnd-moved="$ctrl.tasks.splice($index, 1)"
           dnd-effect-allowed="move">
 
