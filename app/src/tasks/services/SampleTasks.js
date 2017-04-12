@@ -7,13 +7,11 @@ var position = {
 var tasks = [
     {
       name: 'IKEA Kit',
+      type: 'task',
       therbligList: [
         {
           name: 'Transport Empty',
-          type: 'physical',
-          allowedTypes: [
-            'thing'
-          ],
+          type: 'therblig',
           parameters: [
             position,
             { name: 'Orientation',
@@ -42,16 +40,19 @@ var tasks = [
     },
     {
       name: 'Rothschild Kit',
+      type: 'task',
       therbligList: [
       ],
     },
     {
       name: 'Roaster Kit',
+      type: 'task',
       therbligList: [
       ],
     },
     {
       name: 'Furniture Kit',
+      type: 'task',
       therbligList: [
       ],
     }

@@ -6,7 +6,7 @@
         dnd-horizontal-list="true" dnd-allowed-types="['task']">
       <div class="parent" layout="column" ng-repeat="task in $ctrl.tasks" flex
           dnd-draggable="task"
-          dnd-type="task"
+          dnd-type="task.type"
           dnd-moved="$ctrl.tasks.splice($index, 1)"
           dnd-effect-allowed="move">
 
@@ -33,7 +33,7 @@
               <md-list-item 
                 ng-repeat="therblig in task.therbligList"
                 dnd-draggable="therblig"
-                dnd-type="therblig"
+                dnd-type="therblig.type"
                 dnd-moved="task.therbligList.splice($index, 1)"
                 dnd-effect-allowed="move">
                 <span class="md-button md-raised" 
@@ -42,12 +42,13 @@
                     {{ therblig.name }}
 
                   <!-- Things -->
-                  <md-list dnd-list="therblig.things"> 
+                  <md-list dnd-allowed-types="['thing']" dnd-list="therblig.things"> 
                     <md-list-item 
                            ng-repeat="thing in therblig.things | limitTo: 1"
                       dnd-draggable="thing"
                       dnd-moved="therblig.things.splice($index, 1)"
-                      dnd-effect-allowed="move">
+                      dnd-effect-allowed="move"
+                      dnd-type="thing.type">
                       <span class="md-button md-primary md-raised" 
                         style="text-align:center">
                         {{ thing.name }}
