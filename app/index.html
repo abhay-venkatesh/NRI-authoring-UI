@@ -47,18 +47,21 @@
           <md-divider md-inset class="md-caption"> Physical </md-divider>
           <therbligs-list
                 therbligs="app.physicalTherbligs"
+                allowed-types="['physical']"
                 selected="app.selected"
                 on-selected="app.selectTherblig(therblig)">
           </therbligs-list>
           <md-divider md-inset class="md-caption"> Cognitive </md-divider>
           <therbligs-list
                 therbligs="app.cognitiveTherbligs"
+                allowed-types="['cognitive']"
                 selected="app.selected"
                 on-selected="app.selectTherblig(therblig)">
           </therbligs-list>
           <md-divider md-inset class="md-caption"> Cognitive and Physical </md-divider>
           <therbligs-list
                 therbligs="app.cogPhysTherbligs"
+                allowed-types="['cognitivePhysical']"
                 selected="app.selected"
                 on-selected="app.selectTherblig(therblig)">
           </therbligs-list>

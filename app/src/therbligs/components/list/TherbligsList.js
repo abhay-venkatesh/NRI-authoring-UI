@@ -5,7 +5,8 @@ import TherbligsController from 'src/therbligs/TherbligsController';
 export default {
   name : 'therbligsList',
   config : {
-    bindings: {  therbligs: '<', selected : '<', showDetails : '&onSelected' },
+    bindings: {  therbligs: '<', selected : '<', showDetails : '&onSelected',
+                allowedTypes: '<'},
     templateUrl: 'src/therbligs/components/list/TherbligsList.html',
     controller: TherbligsController,
   }

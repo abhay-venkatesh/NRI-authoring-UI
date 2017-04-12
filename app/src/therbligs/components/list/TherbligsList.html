@@ -1,7 +1,7 @@
 <!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
 
 <!-- Fix issue here with allowed types -->
-<md-list dnd-list="$ctrl.therbligs" dnd-allowed-types="['therblig']">
+<md-list dnd-list="$ctrl.therbligs" dnd-allowed-types="$ctrl.allowedTypes">
 
   <!-- List of Therbligs -->
   <md-list-item ng-repeat="therblig in $ctrl.therbligs | unique: 'name'"
@@ -13,7 +13,7 @@
         <span class="md-button md-raised" 
            ng-click="$ctrl.showDetails({therblig:therblig})"
            ng-class="{'selected': therblig === $ctrl.selected}" > 
-          {{therblig.name}}
+          {{ therblig.name }}
           </span>
   </md-list-item>
 </md-list>

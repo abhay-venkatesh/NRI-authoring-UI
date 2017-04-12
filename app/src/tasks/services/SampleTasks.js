@@ -11,7 +11,7 @@ var tasks = [
       therbligList: [
         {
           name: 'Transport Empty',
-          type: 'therblig',
+          type: 'physical',
           parameters: [
             position,
             { name: 'Orientation',

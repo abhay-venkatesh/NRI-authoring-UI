@@ -8,7 +8,7 @@ var position = {
 var physicalTherbligs = [
     {
       name: 'Pick and Drop',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         position,
         { name: 'Orientation',
@@ -27,7 +27,7 @@ var physicalTherbligs = [
     },
     {
       name: 'Transport Empty',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         position,
         { name: 'Orientation',
@@ -46,7 +46,7 @@ var physicalTherbligs = [
     },
     {
       name: 'Grasp',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         position,
         { name: 'Effort',
@@ -61,7 +61,7 @@ var physicalTherbligs = [
     },
     {
       name: 'Transport Loaded',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         position,
         { name: 'Orientation',
@@ -80,7 +80,7 @@ var physicalTherbligs = [
     },
     {
       name: 'Release Load',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         {
           name: 'Arm',
@@ -91,7 +91,7 @@ var physicalTherbligs = [
     },
     {
       name: 'Hold',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         {
           name: 'Duration',
@@ -105,7 +105,7 @@ var physicalTherbligs = [
     },
     {
       name: 'Position',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         position,
         { name: 'Orientation',
@@ -120,7 +120,7 @@ var physicalTherbligs = [
     },
     {
       name: 'Preposition',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         position,
         { name: 'Orientation',
@@ -135,7 +135,7 @@ var physicalTherbligs = [
     },
     {
       name: 'Rest',
-      type: 'therblig',
+      type: 'physical',
       parameters: [
         position,
         { name: 'Orientation',
@@ -198,7 +198,7 @@ var planningConstraints = {
 var cognitiveTherbligs = [
   {
     name: 'Search',
-    type: 'therblig',
+    type: 'cognitive',
     parameters: [
       object,
       regionBoundaries,
@@ -208,13 +208,13 @@ var cognitiveTherbligs = [
   },
   {
     name: 'Find',
-    type: 'therblig',
+    type: 'cognitive',
     parameters: [],
     things: []
   },
   {
     name: 'Select',
-    type: 'therblig',
+    type: 'cognitive',
     parameters: [
       object,
       selectCriteria,
@@ -224,7 +224,7 @@ var cognitiveTherbligs = [
   },
   {
     name: 'Inspect',
-    type: 'therblig',
+    type: 'cognitive',
     parameters: [
       object,
       qualityConditions,
@@ -233,7 +233,7 @@ var cognitiveTherbligs = [
   },
   {
     name: 'Plan',
-    type: 'therblig',
+    type: 'cognitive',
     parameters: [
       initialState,
       goalState,
@@ -275,7 +275,7 @@ var toolMethods = {
 var cogPhysTherbligs = [
   {
     name: 'Assemble',
-    type: 'therblig',
+    type: 'cognitivePhysical',
     parameters: [
       objects,
       goalCriteria,
@@ -285,7 +285,7 @@ var cogPhysTherbligs = [
   },
   {
     name: 'Disassemble',
-    type: 'therblig',
+    type: 'cognitivePhysical',
     parameters: [
       objects,
       goalCriteria,
@@ -295,7 +295,7 @@ var cogPhysTherbligs = [
   },
   {
     name: 'Use',
-    type: 'therblig',
+    type: 'cognitivePhysical',
     parameters: [
       tool,
       toolMethods,
