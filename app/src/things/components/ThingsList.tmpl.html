@@ -1,5 +1,19 @@
+<!-- Toolbar for Things -->
+<md-toolbar class="md-accent">
+  <div class="md-toolbar-tools">
 
-<!-- NOTE: @see ngClick for how to pass data selection to outside expression -->
+    <md-button class="md-button" aria-label="Favorite">
+      <md-icon md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg" style="color: greenyellow;"></md-icon>
+      Upload Things
+    </md-button>
+
+    <md-button class="md-button" aria-label="More">
+      <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg" style="color: greenyellow;"></md-icon>
+      Save Things
+    </md-button>
+  </div>
+</md-toolbar>
+
 <md-list dnd-list="$ctrl.things" >
 
   <!-- List of Things -->
