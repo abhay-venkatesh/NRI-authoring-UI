@@ -19,18 +19,19 @@
   <md-toolbar layout="row" class="md-toolbar-tools">
     <md-button class="menu md-icon-button" hide-gt-sm ng-click="app.toggleList()"
                aria-label="Show Therblig List">
-      <md-icon md-svg-icon="menu">
-      </md-icon>
+      <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
     <h2 flex md-truncate>NSF NRI Authoring Environment</h1>
     <!-- Save Button -->
-    <md-button class="md-icon-button" ng-click="app.save(app.tasks)"
+    <md-button class="md-button" ng-click="app.save(app.tasks)"
       aria-label="save">
       <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg"></md-icon>
+      Save Plan
     </md-button>
     <!-- Load Button -->
-    <md-button ngf-select ng-model="file" class="md-icon-button" aria-label="upload">
+    <md-button ngf-select ng-model="file" class="md-button" aria-label="upload">
       <md-icon md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg"></md-icon>
+      Load Plan
     </md-button>
   </md-toolbar>
 
