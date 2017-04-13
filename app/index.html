@@ -67,15 +67,17 @@
           </therbligs-list>
         </md-tab>
         <md-tab label="things">
+          <!-- Toolbar for Save and upload -->
           <md-toolbar class="md-accent">
             <div class="md-toolbar-tools">
 
-              <md-button class="md-button" aria-label="Favorite">
+              <md-button ngf-select ng-model="thingsFile" class="md-button" aria-label="Favorite">
                 <md-icon md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg" style="color: greenyellow;"></md-icon>
                 Upload Things
               </md-button>
 
-              <md-button class="md-button" aria-label="More">
+              <md-button class="md-button" aria-label="More" 
+              ng-click="app.saveThings(app.things)">
                 <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg" style="color: greenyellow;"></md-icon>
                 Save Things
               </md-button>

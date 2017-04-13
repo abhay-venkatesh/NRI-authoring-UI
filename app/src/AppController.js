@@ -113,10 +113,30 @@ function AppController(TherbligsDataService, TaskCardsDataService,
       var r = new FileReader();
       r.onloadend = function(e){
         var data = e.target.result;
-        //send your binary data via $http or $resource or do anything else with it
         self.tasks = JSON.parse(data);
       };
       r.readAsText($scope.file);
+    }
+  });
+
+  /*
+   * Save Things
+   * @param task to save
+   */
+  self.saveThings = (thingsToSave) => {
+    var textToSave = JSON.stringify(thingsToSave);
+    var data = new Blob([textToSave], { type: 'text/json;charset=utf-8' });
+    FileSaver.saveAs(data, 'things.json');
+  };
+
+  $scope.$watch('thingsFile', function(){
+    if($scope.thingsFile) {
+      var r = new FileReader();
+      r.onloadend = function(e){
+        var data = e.target.result;
+        self.things = JSON.parse(data);
+      };
+      r.readAsText($scope.thingsFile);
     }
   });
 
