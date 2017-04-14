@@ -63,7 +63,13 @@
               </md-list-item>
             </md-list>
           </md-card-content>
-
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-disabled="true">
+              <span class="md-primary"> 
+                 x {{ task.repeat }}
+              </span>
+            </md-button>
+          </md-card-actions>
         </md-card>
       </div>
     </div>

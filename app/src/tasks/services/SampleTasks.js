@@ -8,6 +8,7 @@ var tasks = [
     {
       name: 'IKEA Kit',
       type: 'task',
+      repeat: 0,
       therbligList: [
         {
           name: 'Transport Empty',
@@ -41,18 +42,21 @@ var tasks = [
     {
       name: 'Rothschild Kit',
       type: 'task',
+      repeat: 0,
       therbligList: [
       ],
     },
     {
       name: 'Roaster Kit',
       type: 'task',
+      repeat: 0,
       therbligList: [
       ],
     },
     {
       name: 'Furniture Kit',
       type: 'task',
+      repeat: 0,
       therbligList: [
       ],
     }

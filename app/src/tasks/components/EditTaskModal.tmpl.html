@@ -27,16 +27,34 @@
             </md-input-container>      
         </div>
       </div>
+
+      <!-- Task Parameter Form -->
       <md-content layout-padding>
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button class="md-raised md-primary" ng-click="cancel()">Done</md-button>
-          <md-button class="md-icon-button" aria-label="Close dialog" 
-            ng-click="delete(task)">
-            <md-icon md-svg-src="../assets/svg/ic_delete_black_24px.svg" 
-              aria-label="Delete Task"></md-icon>
-          </md-button>
-        </section>
-      </md-content>
+        <div>
+            <form name="taskForm" >
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm 
+                      ng-keyup="$event.keyCode == 13 && cancel()">
+                  <label> Repeat </label>
+                <input type="number" ng-model="task.repeat" type="text">
+              </md-input-container>
+            </div>
+          </form>
+        </div>
+        </md-content>
+
+        <!-- Done and Delete Buttons -->
+        <md-content layout-padding>
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button class="md-raised md-primary" ng-click="cancel()">Done</md-button>
+            <md-button class="md-icon-button" aria-label="Close dialog" 
+              ng-click="delete(task)">
+              <md-icon md-svg-src="../assets/svg/ic_delete_black_24px.svg" 
+                aria-label="Delete Task"></md-icon>
+            </md-button>
+          </section>
+        </md-content>
     </md-dialog-content>
+
   </form>
 </md-dialog>
