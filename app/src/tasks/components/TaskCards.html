@@ -43,9 +43,11 @@
                     {{ therblig.name }}
 
                   <!-- Things -->
-                  <md-list dnd-allowed-types="['thing']" dnd-list="therblig.things"> 
+                  <md-list dnd-allowed-types="['thing']" 
+                    dnd-list="therblig.things" 
+                    dnd-disable-if="therblig.things.length > 0"> 
                     <md-list-item 
-                           ng-repeat="thing in therblig.things | limitTo: 1"
+                           ng-repeat="thing in therblig.things"
                       dnd-draggable="thing"
                       dnd-moved="therblig.things.splice($index, 1)"
                       dnd-effect-allowed="move"
