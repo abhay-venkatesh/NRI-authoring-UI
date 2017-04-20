@@ -9,7 +9,7 @@
 
 function AppController(TherbligsDataService, TaskCardsDataService,
   ThingsDataService, $mdSidenav, $mdDialog, $scope, FileSaver, Blob, Upload,
-  $timeout) {
+  $timeout, PositionsDataService) {
   var self = this;
 
   // Things Variables
@@ -37,15 +37,29 @@ function AppController(TherbligsDataService, TaskCardsDataService,
       self.cogPhysTherbligs = [].concat(therbligs.cogPhysTherbligs);
     });
 
-  // Task variables
+  // Tasks array
   self.tasks = [];
 
   // Load all library Tasks
   TaskCardsDataService
         .loadAllTasks()
-        .then( function(tasks) {
+        .then(function(tasks) {
           self.tasks = [].concat(tasks);
         });
+
+  // Positions array
+  self.positions = [];
+
+  PositionsDataService
+    .loadAllPositions()
+    .then(function(positions) {
+      self.positions = [].concat(positions);
+      console.log(self.positions);
+    });
+
+  // *********************************
+  // Internal methods
+  // *********************************
 
   // Therblig Task Modal Variables
   var therbligTasks = [];
@@ -68,11 +82,6 @@ function AppController(TherbligsDataService, TaskCardsDataService,
           fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         });
   };
-
-  // *********************************
-  // Internal methods
-  // *********************************
-
 
   /*
    * Controller for the modal to add tasks
@@ -159,4 +168,4 @@ function AppController(TherbligsDataService, TaskCardsDataService,
 
 export default ['TherbligsDataService', 'TaskCardsDataService',
   'ThingsDataService','$mdSidenav', '$mdDialog', '$scope', 'FileSaver', 'Blob',
-  'Upload', '$timeout', AppController];
+  'Upload', '$timeout', 'PositionsDataService', AppController];

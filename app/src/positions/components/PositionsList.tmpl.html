@@ -1,6 +1,8 @@
 <md-list>
-  <md-list-item>
-    <span class="md-button md-accent md-raised">
+  <md-list-item ng-repeat="position in $ctrl.positions">
+    <span class="md-button md-primary md-raised button-text"
+      ng-click="$ctrl.editPosition($event, position)">
+      {{ position.name }}
     </span>
   </md-list-item>
 </md-list>

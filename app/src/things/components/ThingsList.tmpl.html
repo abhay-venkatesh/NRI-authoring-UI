@@ -8,11 +8,10 @@
         dnd-moved="$ctrl.things.splice($index, 1)"
         dnd-effect-allowed="copy"
         >
-        <span class="md-button md-raised md-primary" 
+        <span class="md-button md-raised md-primary button-text" 
            ng-click="$ctrl.editThing($event, thing)"
-           ng-class="{'selected': thing === $ctrl.selected}" 
-           style="text-align:center"> 
-          {{thing.name}}
+           ng-class="{'selected': thing === $ctrl.selected}"> 
+          {{ thing.name }}
           </span>
   </md-list-item>
 </md-list>

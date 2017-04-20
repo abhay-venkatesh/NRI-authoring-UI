@@ -30,4 +30,4 @@ var positions = [
   }
 ];
 
-
+export default { positions };

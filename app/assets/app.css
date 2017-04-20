@@ -173,3 +173,7 @@ input[type="file"] {
 .show-cursor {
     cursor: pointer;
 }
+
+.button-text {
+    text-align: center !important;
+}

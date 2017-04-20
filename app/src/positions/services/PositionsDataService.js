@@ -1,7 +1,9 @@
 "use strict";
 
+import LibraryPositions from 'src/positions/services/PositionsDataModel';
+
 function PositionsDataService($q) {
-  var positions = [];
+  var positions = LibraryPositions.positions;
 
   // Promise-based API
   return {
