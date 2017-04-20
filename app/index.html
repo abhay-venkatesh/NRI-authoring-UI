@@ -67,6 +67,7 @@
                 on-selected="app.selectTherblig(therblig)">
           </therbligs-list>
         </md-tab>
+
         <md-tab label="things">
           <!-- Toolbar for Save and upload -->
           <md-toolbar class="md-accent">
@@ -87,7 +88,30 @@
           <things-list things="app.things">
           </things-list>
         </md-tab>
+
         <md-tab label="positions">
+          <!-- Toolbar for Save and upload -->
+          <md-toolbar class="md-accent">
+            <div class="md-toolbar-tools">
+
+              <md-button ngf-select ng-model="positionsFile" 
+                class="md-button positions-toolbar-button" 
+                aria-label="Upload Positions">
+                <md-icon 
+                  md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg" 
+                  style="color: greenyellow;"></md-icon>
+                Upload Positions
+              </md-button>
+
+              <md-button class="md-button positions-toolbar-button" 
+                         aria-label="Save Positions" 
+              ng-click="app.savePositions(app.positions)">
+                <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg" 
+                  style="color: greenyellow;"></md-icon>
+                Save Positions
+              </md-button>
+            </div>
+          </md-toolbar>
           <positions-list positions="app.positions">
           </positions-list>
         </md-tab>

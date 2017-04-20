@@ -54,7 +54,6 @@ function AppController(TherbligsDataService, TaskCardsDataService,
     .loadAllPositions()
     .then(function(positions) {
       self.positions = [].concat(positions);
-      console.log(self.positions);
     });
 
   // *********************************
@@ -117,6 +116,10 @@ function AppController(TherbligsDataService, TaskCardsDataService,
     FileSaver.saveAs(data, 'tasks.json');
   };
 
+  /*
+   * Upload tasks.
+   *
+   */
   $scope.$watch('file', function(){
     if($scope.file) {
       var r = new FileReader();
@@ -130,7 +133,7 @@ function AppController(TherbligsDataService, TaskCardsDataService,
 
   /*
    * Save Things
-   * @param task to save
+   * @param thing to save
    */
   self.saveThings = (thingsToSave) => {
     var textToSave = JSON.stringify(thingsToSave);
@@ -138,6 +141,10 @@ function AppController(TherbligsDataService, TaskCardsDataService,
     FileSaver.saveAs(data, 'things.json');
   };
 
+  /*
+   * Upload things.
+   *
+   */
   $scope.$watch('thingsFile', function(){
     if($scope.thingsFile) {
       var r = new FileReader();
@@ -146,6 +153,31 @@ function AppController(TherbligsDataService, TaskCardsDataService,
         self.things = JSON.parse(data);
       };
       r.readAsText($scope.thingsFile);
+    }
+  });
+
+  /*
+   * Save Positions
+   * @param position to save
+   */
+  self.savePositions = (positionsToSave) => {
+    var positionsToSave = JSON.stringify(positionsToSave);
+    var data = new Blob([positionsToSave], { type: 'text/json;charset=utf-8' });
+    FileSaver.saveAs(data, 'positions.json');
+  };
+
+  /*
+   * Upload things.
+   *
+   */
+  $scope.$watch('positionsFile', function(){
+    if($scope.thingsFile) {
+      var r = new FileReader();
+      r.onloadend = function(e){
+        var data = e.target.result;
+        self.positions = JSON.parse(data);
+      };
+      r.readAsText($scope.positionsFile);
     }
   });
 
