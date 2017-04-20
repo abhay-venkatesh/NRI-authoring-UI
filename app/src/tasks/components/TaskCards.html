@@ -38,9 +38,14 @@
                 dnd-moved="task.therbligList.splice($index, 1)"
                 dnd-effect-allowed="move">
                 <span class="md-button md-raised" 
-                 ng-click="$ctrl.editTherblig($event, therblig, task.therbligList)"
                  ng-class="{'selected': therblig === $ctrl.selected}">
                     {{ therblig.name }}
+
+                <md-button class="md-icon-button button-icon"
+                  ng-click="$ctrl.editTherblig($event, therblig, task.therbligList)">
+                 <md-icon md-svg-icon="../assets/svg/ic_mode_edit_black_24px.svg">
+                 </md-icon>
+                </md-button>
 
                   <!-- Things -->
                   <md-list dnd-allowed-types="['thing']" 
