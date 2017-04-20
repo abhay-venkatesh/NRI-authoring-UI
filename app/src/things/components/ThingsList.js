@@ -1,6 +1,7 @@
 "use strict";
 
 import ThingsController from 'src/things/ThingsController';
+
 export default {
   name : 'thingsList',
   config : {
