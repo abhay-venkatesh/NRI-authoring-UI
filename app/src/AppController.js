@@ -171,7 +171,7 @@ function AppController(TherbligsDataService, TaskCardsDataService,
    *
    */
   $scope.$watch('positionsFile', function(){
-    if($scope.thingsFile) {
+    if($scope.positionsFile) {
       var r = new FileReader();
       r.onloadend = function(e){
         var data = e.target.result;
