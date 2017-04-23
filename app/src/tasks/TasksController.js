@@ -3,10 +3,21 @@
 function TasksController($mdDialog, $scope) {
   var self = this;
 
+  self.updateTherbligThing = (therblig, thing) => {
+    therblig.thing = thing;
+  };
+
+  self.updateTherbligPosition = (therblig, position) => {
+    therblig.parameters[0] = position;
+  };
+
   // Variables for Edit Therblig Method
   var therbligToEdit = {};
   var taskTherbligList = [];
+
   /*
+   * Edit the therblig.
+   *
    * @param1 event service variable
    * @param2 therblig that needs to be edited
    * @param3 list of therbligs the therblig to be edited is in
@@ -27,6 +38,7 @@ function TasksController($mdDialog, $scope) {
   // Variables for Edit Task method
   var taskToEdit = {};
   var taskList = [];
+
   /*
    * @param1 event service variable
    * @param2 task that needs to be edited

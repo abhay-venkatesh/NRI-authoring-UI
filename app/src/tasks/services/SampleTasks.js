@@ -1,6 +1,7 @@
 'use strict';
 var position = {
-  name: 'Position (x, y, z)',
+  name: '',
+  type: 'position',
   val: '',
 };
 

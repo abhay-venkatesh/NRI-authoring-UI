@@ -4,29 +4,17 @@ var positions = [
   {
     name: "Position X",
     type: "position",
-    parameters: {
-      x: "",
-      y: "",
-      z: ""
-    }
+    val: '3, 4, 5'
   },
   {
     name: "Position Y",
     type: "position",
-    parameters: {
-      x: "",
-      y: "",
-      z: ""
-    }
+    val: ''
   },
   {
     name: "Position Y",
     type: "position",
-    parameters: {
-      x: "",
-      y: "",
-      z: ""
-    }
+    val: ''
   }
 ];
 

@@ -1,8 +1,9 @@
 "use strict";
 
 var position = {
-  name: 'Position (x, y, z)',
-  val: '',
+  name: '',
+  type: 'position',
+  val: ''
 };
 
 var physicalTherbligs = [
@@ -23,7 +24,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-      things: []
+      thing: {}
     },
     {
       name: 'Transport Empty',
@@ -42,13 +43,12 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-      things: []
+      thing: {}
     },
     {
       name: 'Grasp',
       type: 'physical',
       parameters: [
-        position,
         { name: 'Effort',
           val: ''
         } ,
@@ -57,7 +57,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     things: []
+     thing: {}
     },
     {
       name: 'Transport Loaded',
@@ -76,7 +76,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     things: []
+     thing: {}
     },
     {
       name: 'Release Load',
@@ -87,7 +87,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     things: []
+     thing: {}
     },
     {
       name: 'Hold',
@@ -101,7 +101,7 @@ var physicalTherbligs = [
           val: ''
         } ,
       ],
-     things: []
+     thing: {}
     },
     {
       name: 'Position',
@@ -116,7 +116,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     things: []
+     thing: {}
     },
     {
       name: 'Preposition',
@@ -131,7 +131,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     things: []
+     thing: {}
     },
     {
       name: 'Rest',
@@ -146,7 +146,7 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     things: []
+     thing: {}
     },
 ];
 
@@ -204,13 +204,13 @@ var cognitiveTherbligs = [
       regionBoundaries,
       searchRoutine,
     ],
-    things: []
+    thing: {}
   },
   {
     name: 'Find',
     type: 'cognitive',
     parameters: [],
-    things: []
+    thing: {}
   },
   {
     name: 'Select',
@@ -220,7 +220,7 @@ var cognitiveTherbligs = [
       selectCriteria,
       decisionConstraints,
     ],
-    things: []
+    thing: {}
   },
   {
     name: 'Inspect',
@@ -229,7 +229,7 @@ var cognitiveTherbligs = [
       object,
       qualityConditions,
     ],
-    things: []
+    thing: {}
   },
   {
     name: 'Plan',
@@ -239,7 +239,7 @@ var cognitiveTherbligs = [
       goalState,
       planningConstraints,
     ],
-    things: []
+    thing: {}
   },
 ];
 
@@ -281,7 +281,7 @@ var cogPhysTherbligs = [
       goalCriteria,
       assemblyConstraints,
     ],
-    things: []
+    thing: {}
   },
   {
     name: 'Disassemble',
@@ -291,7 +291,7 @@ var cogPhysTherbligs = [
       goalCriteria,
       disassemblyConstraints,
     ],
-    things: []
+    thing: {}
   },
   {
     name: 'Use',
@@ -300,7 +300,7 @@ var cogPhysTherbligs = [
       tool,
       toolMethods,
     ],
-    things: []
+    thing: {}
   },
 ];
 
