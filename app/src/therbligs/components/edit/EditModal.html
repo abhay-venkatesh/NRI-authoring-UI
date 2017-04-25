@@ -28,7 +28,36 @@
       <md-content layout-padding>
         <div>
             <form name="therbligForm" >
-            <div layout-gt-sm="row" ng-repeat="parameter in therblig.parameters">
+            <div layout-gt-sm="row" ng-repeat="parameter in therblig.parameters"
+              ng-hide="parameter.name == ''">
+              <md-input-container class="md-block" flex-gt-sm 
+                      ng-keyup="$event.keyCode == 13 && cancel()">
+                  <label>{{ parameter.name }}</label>
+                <input ng-model="parameter.val" type="text">
+              </md-input-container>
+            </div>
+          </form>
+        </div>
+      </md-content>
+      
+      <!-- Name Input -->
+      <div class="md-dialog-content" ng-hide="therblig.thing == null">
+        <div class="md-inline-form">
+          <md-input-container class="md-icon-float md-block">
+            <label>Thing Name</label>
+            <md-icon class="name"></md-icon>
+            <input ng-model="therblig.thing.name" type="text" 
+            placeholder="{{ therblig.thing.name }}" 
+            ng-keyup="$event.keyCode == 13 && cancel()">
+          </md-input-container>      
+        </div>
+      </div>
+
+      <!-- Thing Parameter Form -->
+      <md-content layout-padding>
+        <div>
+            <form name="thingForm" >
+            <div layout-gt-sm="row" ng-repeat="parameter in therblig.thing.parameters">
               <md-input-container class="md-block" flex-gt-sm 
                       ng-keyup="$event.keyCode == 13 && cancel()">
                   <label>{{ parameter.name }}</label>
