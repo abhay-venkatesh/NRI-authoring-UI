@@ -27,6 +27,22 @@
             </md-input-container>      
         </div>
       </div>
+
+      <!-- Thing Parameter Form -->
+      <md-content layout-padding>
+        <div>
+            <form name="positionParameterForm" >
+              <div layout-gt-sm="row" >
+              <md-input-container class="md-block" flex-gt-sm 
+                      ng-keyup="$event.keyCode == 13 && cancel()">
+                  <label>Position Value</label>
+                <input ng-model="position.val" type="text">
+              </md-input-container>
+            </div>
+          </form>
+        </div>
+      </md-content>
+
       <md-content layout-padding>
         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
           <md-button class="md-raised md-primary" ng-click="cancel()">Done</md-button>
