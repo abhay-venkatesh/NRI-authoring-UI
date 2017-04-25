@@ -123,16 +123,17 @@
 
     <!-- Container #4: Task  Cards -->
     <md-content flex id="content">
-        <task-cards tasks="app.tasks" selected="app.selected" 
-          positions="app.positions" things="app.things"
-          on-selected="app.selectTherblig(therblig)">
-        </task-cards>
-
-        <md-button class="md-fab md-fab-bottom-right" 
-          ng-click="app.addTask($event, app.tasks)" aria-label="Add Task">
-          <span style="font-size: 2em;">+</span>
-        </md-button>
+      <task-cards tasks="app.tasks" selected="app.selected" 
+        positions="app.positions" things="app.things"
+        on-selected="app.selectTherblig(therblig)">
+      </task-cards>
     </md-content>
+
+    <!-- Floating FAB-->
+    <md-button class="md-fab md-fab-bottom-right" 
+      ng-click="app.addTask($event, app.tasks)" aria-label="Add Task">
+      <span style="font-size: 2em;">+</span>
+    </md-button>
 
   </div>
 
