@@ -17,16 +17,32 @@
     <!-- Input Area -->
     <md-dialog-content>
       <div class="md-dialog-content">
-          <div class="md-inline-form">
-            <md-input-container class="md-icon-float md-block">
-          <!-- Use floating label instead of placeholder -->
-              <label>Thing Name</label>
-              <md-icon class="name"></md-icon>
-              <input ng-model="thing.name" type="text" placeholder="{{ thing.name }}"
-                md-autofocus ng-keyup="$event.keyCode == 13 && cancel()">
-            </md-input-container>      
+        <div class="md-inline-form">
+          <md-input-container class="md-icon-float md-block">
+        <!-- Use floating label instead of placeholder -->
+            <label>Thing Name</label>
+            <md-icon class="name"></md-icon>
+            <input ng-model="thing.name" type="text" placeholder="{{ thing.name }}"
+              md-autofocus ng-keyup="$event.keyCode == 13 && cancel()">
+          </md-input-container>      
         </div>
       </div>
+
+      <!-- Thing Parameter Form -->
+      <md-content layout-padding>
+        <div>
+            <form name="thingForm" >
+            <div layout-gt-sm="row" ng-repeat="parameter in thing.parameters">
+              <md-input-container class="md-block" flex-gt-sm 
+                      ng-keyup="$event.keyCode == 13 && cancel()">
+                  <label>{{ parameter.name }}</label>
+                <input ng-model="parameter.val" type="text">
+              </md-input-container>
+            </div>
+          </form>
+        </div>
+      </md-content>
+
       <md-content layout-padding>
         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
           <md-button class="md-raised md-primary" ng-click="cancel()">Done</md-button>
