@@ -79,7 +79,7 @@
                 Upload Things
               </md-button>
 
-              <md-button class="md-button" aria-label="More" 
+              <md-button class="md-button" aria-label="More"
               ng-click="app.saveThings(app.things)">
                 <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg" style="color: greenyellow;"></md-icon>
                 Save Things
@@ -95,19 +95,19 @@
           <md-toolbar class="md-accent">
             <div class="md-toolbar-tools">
 
-              <md-button ngf-select ng-model="positionsFile" 
-                class="md-button positions-toolbar-button" 
+              <md-button ngf-select ng-model="positionsFile"
+                class="md-button positions-toolbar-button"
                 aria-label="Upload Positions">
-                <md-icon 
-                  md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg" 
+                <md-icon
+                  md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg"
                   style="color: greenyellow;"></md-icon>
                 Upload Positions
               </md-button>
 
-              <md-button class="md-button positions-toolbar-button" 
-                         aria-label="Save Positions" 
+              <md-button class="md-button positions-toolbar-button"
+                         aria-label="Save Positions"
               ng-click="app.savePositions(app.positions)">
-                <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg" 
+                <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg"
                   style="color: greenyellow;"></md-icon>
                 Save Positions
               </md-button>
@@ -116,6 +116,12 @@
           <positions-list positions="app.positions">
           </positions-list>
         </md-tab>
+
+        <md-tab label="macros">
+            <macros-list>
+            </macros-list>
+        </md-tab>
+
       </md-tabs>
 
       <!-- Custom TherbligList component -->
@@ -123,14 +129,14 @@
 
     <!-- Container #4: Task  Cards -->
     <md-content flex id="content">
-      <task-cards tasks="app.tasks" selected="app.selected" 
+      <task-cards tasks="app.tasks" selected="app.selected"
         positions="app.positions" things="app.things"
         on-selected="app.selectTherblig(therblig)">
       </task-cards>
     </md-content>
 
     <!-- Floating FAB-->
-    <md-button class="md-fab md-fab-bottom-right" 
+    <md-button class="md-fab md-fab-bottom-right"
       ng-click="app.addTask($event, app.tasks)" aria-label="Add Task">
       <span style="font-size: 2em;">+</span>
     </md-button>
