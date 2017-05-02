@@ -9,7 +9,7 @@
         dnd-effect-allowed="copy"
         >
         <span class="md-button md-raised button-text"
-           ng-click="$ctrl.editMacro($event, macro)"
+           ng-click="$ctrl.editMacro($event, macro, $ctrl.macros)"
            ng-class="{'selected': macro === $ctrl.selected}">
           {{ macro.name }}
           <md-icon class="button-icon"
