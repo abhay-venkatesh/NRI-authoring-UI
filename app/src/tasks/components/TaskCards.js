@@ -5,7 +5,7 @@ export default {
     config: {
       bindings: {
         tasks: '<', selected: '<', showDetails: '&onSelected',
-        positions: '<', things: '<'
+        positions: '<', things: '<', macros: '<'
       },
       templateUrl: 'src/tasks/components/TaskCards.html',
       controller: TasksController,

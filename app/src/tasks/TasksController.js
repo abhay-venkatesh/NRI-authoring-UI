@@ -38,15 +38,17 @@ function TasksController($mdDialog, $scope) {
   // Variables for Edit Task method
   var taskToEdit = {};
   var taskList = [];
+  var macrosToEdit = [];
 
   /*
    * @param1 event service variable
    * @param2 task that needs to be edited
    * @param3 list of tasks that the task that needs to be edited is in
    */
-  self.editTask = (ev, task, tasks) => {
+  self.editTask = (ev, task, tasks, macros) => {
     taskToEdit = task;
     taskList = tasks;
+    macrosToEdit = macros;
     $mdDialog.show({
           controller: EditTaskController,
           templateUrl: 'src/tasks/components/EditTaskModal.tmpl.html',
@@ -79,7 +81,17 @@ function TasksController($mdDialog, $scope) {
     $scope.delete = (task) => {
         var index = taskList.indexOf(task);
         taskList.splice(index, 1);
-        $scope.cancel();
+        $mdDialog.cancel();
+    };
+
+    $scope.saveMacro = (macroName, therbligs) => {
+      var newMacro = {
+        name: macroName,
+        therbligsList: therbligs,
+        type: "macro"
+      };
+      macrosToEdit.push(newMacro);
+      $mdDialog.cancel();
     };
   }
 

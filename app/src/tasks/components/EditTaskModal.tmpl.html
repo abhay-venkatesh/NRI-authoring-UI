@@ -53,6 +53,15 @@
                 aria-label="Delete Task"></md-icon>
             </md-button>
           </section>
+          <section layout="row" layout-align="center center">
+              <md-button class="md-button md-raised md-primary" 
+                aria-label="Save as Macro" 
+                ng-click="saveMacro(task.name, task.therbligList)">
+                <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg"
+                  style="color: greenyellow;"></md-icon>
+                Save as Macro 
+              </md-button>
+          </section>
         </md-content>
     </md-dialog-content>
 
