@@ -118,8 +118,28 @@
         </md-tab>
 
         <md-tab label="macros">
-            <macros-list macros="app.macros">
-            </macros-list>
+          <!-- Toolbar for Save and upload -->
+          <md-toolbar class="md-accent">
+            <div class="md-toolbar-tools">
+
+              <md-button ngf-select ng-model="macrosFile"
+                class="md-button" aria-label="Upload Macros">
+                <md-icon
+                  md-svg-icon="../assets/svg/ic_file_upload_white_24px.svg"
+                  style="color: greenyellow;"></md-icon>
+                Upload Macros
+              </md-button>
+
+              <md-button class="md-button" aria-label="Save Macros"
+              ng-click="app.saveMacros(app.macros)">
+                <md-icon md-svg-icon="../assets/svg/ic_save_white_24px.svg"
+                  style="color: greenyellow;"></md-icon>
+                Save Macros 
+              </md-button>
+            </div>
+          </md-toolbar>
+          <macros-list macros="app.macros">
+          </macros-list>
         </md-tab>
 
       </md-tabs>

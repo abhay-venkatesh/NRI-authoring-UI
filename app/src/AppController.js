@@ -190,6 +190,31 @@ function AppController(TherbligsDataService, TaskCardsDataService,
     }
   });
 
+  /*
+   * Save Macros
+   *
+   * @param macro to save
+   */
+  self.saveMacros = (macros) => {
+    var macrosToSave = JSON.stringify(macros);
+    var data = new Blob([macrosToSave], { type: 'text/json;charset=utf-8' });
+    FileSaver.saveAs(data, 'macros.json');
+  };
+
+  /*
+   * Upload Macros
+   *
+   */
+  $scope.$watch('macrosFile', function(){
+    if($scope.macrosFile) {
+      var r = new FileReader();
+      r.onloadend = function(e){
+        var data = e.target.result;
+        self.macros = JSON.parse(data);
+      };
+      r.readAsText($scope.macrosFile);
+    }
+  });
 
   /**
    * Select the current therblig
