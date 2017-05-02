@@ -33,7 +33,7 @@
         <div>
             <form name="macroForm" >
             <div layout-gt-sm="row" ng-repeat="parameter in macro.parameters">
-              <md-input-container class="md-block" flex-gt-sm 
+              <md-input-container class="md-block" flex-gt-sm
                       ng-keyup="$event.keyCode == 13 && cancel()">
                   <label>{{ parameter.name }}</label>
                 <input ng-model="parameter.val" type="text">

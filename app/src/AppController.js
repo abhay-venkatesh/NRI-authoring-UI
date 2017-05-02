@@ -9,7 +9,7 @@
 
 function AppController(TherbligsDataService, TaskCardsDataService,
   ThingsDataService, $mdSidenav, $mdDialog, $scope, FileSaver, Blob, Upload,
-  $timeout, PositionsDataService) {
+  $timeout, PositionsDataService, MacrosDataService) {
   var self = this;
 
   // Things Variables
@@ -54,6 +54,15 @@ function AppController(TherbligsDataService, TaskCardsDataService,
     .loadAllPositions()
     .then(function(positions) {
       self.positions = [].concat(positions);
+    });
+
+  // Macros array
+  self.macros = [];
+
+  MacrosDataService
+    .loadAllMacros()
+    .then(function(macros) {
+      self.macros = [].concat(macros);
     });
 
   // *********************************
@@ -160,8 +169,8 @@ function AppController(TherbligsDataService, TaskCardsDataService,
    * Save Positions
    * @param position to save
    */
-  self.savePositions = (positionsToSave) => {
-    var positionsToSave = JSON.stringify(positionsToSave);
+  self.savePositions = (positions) => {
+    var positionsToSave = JSON.stringify(positions);
     var data = new Blob([positionsToSave], { type: 'text/json;charset=utf-8' });
     FileSaver.saveAs(data, 'positions.json');
   };
@@ -200,4 +209,5 @@ function AppController(TherbligsDataService, TaskCardsDataService,
 
 export default ['TherbligsDataService', 'TaskCardsDataService',
   'ThingsDataService','$mdSidenav', '$mdDialog', '$scope', 'FileSaver', 'Blob',
-  'Upload', '$timeout', 'PositionsDataService', AppController];
+  'Upload', '$timeout', 'PositionsDataService', 'MacrosDataService',
+  AppController];

@@ -2,7 +2,7 @@
 import allMacros from 'src/macros/services/MacrosDataModel';
 
 function MacrosDataService($q) {
-  var macros = allMacros;
+  var macros = allMacros.macros;
 
   // Promise-based API
   return {

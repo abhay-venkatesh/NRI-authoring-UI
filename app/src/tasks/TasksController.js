@@ -82,6 +82,21 @@ function TasksController($mdDialog, $scope) {
         $scope.cancel();
     };
   }
+
+  /*
+   * Drop callback for Task TherbligsList
+   */
+  self.dropCallBack = (index, item, external, type, therbligsList) => {
+    if(type == "physical" || type == "cognitive" || type == "cognitivePhysical") {
+      return item;
+    } else {
+      item.therbligsList.forEach(function(entry) {
+        therbligsList.push(entry);
+      });
+      return true;
+    }
+  };
+
 }
 
 export default [ '$mdDialog', '$scope', TasksController ];

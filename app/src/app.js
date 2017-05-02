@@ -13,6 +13,7 @@ import Therbligs from 'src/therbligs/Therbligs';
 import Tasks from 'src/tasks/Tasks';
 import Things from 'src/things/Things';
 import Positions from 'src/positions/Positions';
+import Macros from 'src/macros/Macros';
 
 export default angular.module( 'starter-app', [
     'ngMaterial',
@@ -23,7 +24,8 @@ export default angular.module( 'starter-app', [
     Therbligs.name,
     Tasks.name,
     Things.name,
-    Positions.name] )
+    Positions.name,
+    Macros.name] )
   .config(($mdIconProvider, $mdThemingProvider) => {
 
     $mdIconProvider
