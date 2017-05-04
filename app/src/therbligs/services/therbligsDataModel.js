@@ -43,7 +43,6 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-      thing: {}
     },
     {
       name: 'Grasp',
@@ -116,7 +115,6 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     thing: {}
     },
     {
       name: 'Preposition',
@@ -131,7 +129,6 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     thing: {}
     },
     {
       name: 'Rest',
@@ -146,7 +143,6 @@ var physicalTherbligs = [
           val: '',
         },
       ],
-     thing: {}
     },
 ];
 

@@ -12,7 +12,7 @@ var tasks = [
       repeat: 0,
       therbligList: [
         {
-          name: 'Transport Empty',
+          name: 'Pick and Drop',
           type: 'physical',
           parameters: [
             position,
@@ -28,16 +28,8 @@ var tasks = [
               val: '',
             },
           ],
-          things: [
-            {
-              name: 'A',
-              parameters: [
-                position,
-              ],
-              type: 'thing'
-            },
-          ]
-        }
+          thing: {},
+        },
       ],
     },
     {

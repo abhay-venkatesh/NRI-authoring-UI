@@ -25,7 +25,6 @@ var macros = [
             val: '',
           },
         ],
-        thing: {}
       },
       {
         name: 'Grasp',

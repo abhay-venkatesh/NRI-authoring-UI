@@ -105,6 +105,8 @@ function AppController(TherbligsDataService, TaskCardsDataService,
     currentTask =
     {
       name: '',
+      type: 'task',
+      repeat: 0,
       therbligList: [
       ],
     };
