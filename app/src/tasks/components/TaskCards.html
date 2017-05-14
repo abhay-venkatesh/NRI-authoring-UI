@@ -49,15 +49,18 @@
                  </md-icon>
                 </md-button>
 
+
                   <!-- Things -->
                   <div layout="row">
                     <div flex style="padding-right: 20px" >
                       <md-menu>
                        <!-- Trigger element is a md-button with an icon -->
-                       <md-button class="md-primary md-raised button-text"
-                         ng-click="$mdMenu.open($event)" class="md-icon-button"
-                                                    aria-label="Open sample menu"
+                      <md-button class="md-raised button-text md-primary"
+                                 ng-class="{btn1: (therblig.thing.name == null)}"
+                         ng-click="$mdMenu.open($event)" 
+                          aria-label="Open sample menu"
                          ng-show="therblig.hasOwnProperty('thing')">
+                        <span ng-hide="therblig.thing.name != null"> Thing </span>
                          {{ therblig.thing.name }}
                        </md-button>
                        <md-menu-content>
@@ -73,9 +76,11 @@
                       <md-menu>
                        <!-- Trigger element is a md-button with an icon -->
                        <md-button class="md-raised md-accent button-text" 
+                          ng-class="{btn1: (therblig.parameters[0].name == '')}"
                          ng-click="$mdMenu.open($event)" class="md-icon-button" 
                          aria-label="Open sample menu" 
                          ng-show="therblig.parameters[0].type === 'position'">
+                         <span ng-hide="therblig.parameters[0].name != ''"> Position </span>
                          {{ therblig.parameters[0].name }}
                        </md-button>
                        <md-menu-content>

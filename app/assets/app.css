@@ -174,3 +174,11 @@ input[type="file"] {
     float: right;
     padding-top: 4px;
 }
+
+.btn1 {
+  background-color: #a8a8a8 !important;
+}
+
+.strike {
+  text-decoration: line-through;
+}
