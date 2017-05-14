@@ -1,72 +1,82 @@
 <md-dialog>
   <form ng-cloak>
+
+    <!-- Header Toolbar -->
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>Edit Therblig</h2>
-        <span flex></span>
+        <!-- This span here to push close dialog button --><span flex></span>
         <md-button class="md-icon-button" aria-label="Close dialog" ng-click="cancel()">
-          <md-icon md-svg-src="../assets/svg/ic_done_white_24px.svg" aria-label="Close dialog"></md-icon>
+          <md-icon md-svg-src="../assets/svg/ic_done_white_24px.svg" 
+            aria-label="Close dialog"></md-icon>
         </md-button>
       </div>
     </md-toolbar>
 
+    <!-- Start Form Content -->
     <md-dialog-content>
-        <!-- Name Input -->
-      <div class="md-dialog-content">
-          <div class="md-inline-form">
-            <md-input-container class="md-icon-float md-block">
-              <label>Therblig Name</label>
-              <md-icon class="name"></md-icon>
-              <input ng-model="therblig.name" type="text" 
-              placeholder="{{ therblig.name }}" md-autofocus
-              ng-keyup="$event.keyCode == 13 && cancel()">
-            </md-input-container>      
-        </div>
-      </div>
 
-      <!-- Therblig Parameter Form -->
-      <md-content layout-padding>
-        <div>
+      <div layout="row">
+
+        <div layout="column">
+          <!-- Therblig Name Input -->
+          <div class="md-dialog-content">
+            <div class="md-inline-form">
+              <md-input-container class="md-icon-float md-block">
+                <label>Therblig Name</label>
+                <md-icon class="name"></md-icon>
+                <input ng-model="therblig.name" type="text" 
+                  placeholder="{{ therblig.name }}" md-autofocus
+                ng-keyup="$event.keyCode == 13 && cancel()">
+              </md-input-container>      
+            </div>
+          </div>
+
+          <!-- Therblig Parameter Form -->
+          <md-content layout-padding>
             <form name="therbligForm" >
-            <div layout-gt-sm="row" ng-repeat="parameter in therblig.parameters"
-              ng-hide="parameter.name == ''">
-              <md-input-container class="md-block" flex-gt-sm 
-                      ng-keyup="$event.keyCode == 13 && cancel()">
-                  <label>{{ parameter.name }}</label>
-                <input ng-model="parameter.val" type="text">
-              </md-input-container>
-            </div>
-          </form>
+              <div ng-repeat="parameter in therblig.parameters"
+                ng-hide="parameter.name == ''">
+                <md-input-container class="md-block" 
+                        ng-keyup="$event.keyCode == 13 && cancel()">
+                    <label>{{ parameter.name }}</label>
+                  <input ng-model="parameter.val" type="text">
+                </md-input-container>
+              </div>
+            </form>
+          </md-content>
         </div>
-      </md-content>
-      
-      <!-- Name Input -->
-      <div class="md-dialog-content" ng-hide="therblig.thing == null">
-        <div class="md-inline-form">
-          <md-input-container class="md-icon-float md-block">
-            <label>Thing Name</label>
-            <md-icon class="name"></md-icon>
-            <input ng-model="therblig.thing.name" type="text" 
-            placeholder="{{ therblig.thing.name }}" 
-            ng-keyup="$event.keyCode == 13 && cancel()">
-          </md-input-container>      
+
+        <!-- Thing Parameter Form -->
+        <div layout="column" ng-hide="therblig.thing.name == null">
+            <!-- Name Input -->
+            <div class="md-dialog-content">
+              <div class="md-inline-form">
+                <md-input-container class="md-icon-float md-block">
+                  <label>Thing Name</label>
+                  <md-icon class="name"></md-icon>
+                  <input ng-model="therblig.thing.name" type="text" 
+                    placeholder="{{ therblig.thing.name }}" 
+                  ng-keyup="$event.keyCode == 13 && cancel()">
+                </md-input-container>      
+              </div>
+            </div>
+
+          <md-content layout-padding>
+                <form name="thingForm" >
+                <div ng-repeat="parameter in therblig.thing.parameters">
+                  <md-input-container class="md-block" 
+                          ng-keyup="$event.keyCode == 13 && cancel()">
+                      <label>{{ parameter.name }}</label>
+                    <input ng-model="parameter.val" type="text">
+                  </md-input-container>
+                </div>
+              </form>
+          </md-content>
         </div>
       </div>
 
-      <!-- Thing Parameter Form -->
-      <md-content layout-padding>
-        <div>
-            <form name="thingForm" >
-            <div layout-gt-sm="row" ng-repeat="parameter in therblig.thing.parameters">
-              <md-input-container class="md-block" flex-gt-sm 
-                      ng-keyup="$event.keyCode == 13 && cancel()">
-                  <label>{{ parameter.name }}</label>
-                <input ng-model="parameter.val" type="text">
-              </md-input-container>
-            </div>
-          </form>
-        </div>
-
+      <md-content>
         <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
           <md-button class="md-raised md-primary" ng-click="cancel()">Done</md-button>
           <md-button class="md-icon-button" aria-label="Close dialog" 
