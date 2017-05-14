@@ -271,7 +271,7 @@ var toolMethods = {
 var cogPhysTherbligs = [
   {
     name: 'Assemble',
-    type: 'cognitivePhysical',
+    type: 'cognitivephysical',
     parameters: [
       objects,
       goalCriteria,
@@ -281,7 +281,7 @@ var cogPhysTherbligs = [
   },
   {
     name: 'Disassemble',
-    type: 'cognitivePhysical',
+    type: 'cognitivephysical',
     parameters: [
       objects,
       goalCriteria,
@@ -291,7 +291,7 @@ var cogPhysTherbligs = [
   },
   {
     name: 'Use',
-    type: 'cognitivePhysical',
+    type: 'cognitivephysical',
     parameters: [
       tool,
       toolMethods,

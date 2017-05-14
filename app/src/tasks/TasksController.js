@@ -99,7 +99,7 @@ function TasksController($mdDialog, $scope) {
    * Drop callback for Task TherbligsList
    */
   self.dropCallBack = (index, item, external, type, therbligsList) => {
-    if(type == "physical" || type == "cognitive" || type == "cognitivePhysical") {
+    if(type == "physical" || type == "cognitive" || type == "cognitivephysical") {
       return item;
     } else {
       item.therbligsList.forEach(function(entry) {
