@@ -1,6 +1,8 @@
 "use strict";
 
-function TasksController($mdDialog, $scope) {
+import SequencingGraph from 'src/tasks/SequencingGraph';
+
+function TasksController($mdDialog, $scope, $mdToast) {
   var self = this;
 
   self.updateTherbligThing = (therblig, thing) => {
@@ -109,6 +111,58 @@ function TasksController($mdDialog, $scope) {
     }
   };
 
+
+  /*
+   * Graph Stuff
+   */
+  var graph = new SequencingGraph();
+
+  /*
+   * Notification for therblig sequencing.
+   */
+  var last = {
+        bottom: true,
+        top: false,
+        left: false,
+        right: true
+      };
+
+  $scope.toastPosition = angular.extend({},last);
+
+  $scope.getToastPosition = function() {
+    sanitizePosition();
+
+    return Object.keys($scope.toastPosition)
+      .filter(function(pos) { return $scope.toastPosition[pos]; })
+      .join(' ');
+  };
+
+  function sanitizePosition() {
+    var current = $scope.toastPosition;
+
+    if ( current.bottom && last.top ) current.top = false;
+    if ( current.top && last.bottom ) current.bottom = false;
+    if ( current.right && last.left ) current.left = false;
+    if ( current.left && last.right ) current.right = false;
+
+    last = angular.extend({},current);
+  }
+
+  self.showActionToast = function() {
+      var pinTo = $scope.getToastPosition();
+      var toast = $mdToast.simple()
+        .textContent('Incorrect therblig sequencing. ')
+        .action('OK')
+        .highlightAction(true)
+        .highlightClass('md-accent')// Accent is used by default, this just demonstrates the usage.
+        .position(pinTo);
+
+      $mdToast.show(toast).then(function(response) {
+        if ( response == 'ok' ) {
+        }
+      });
+    };
+
 }
 
-export default [ '$mdDialog', '$scope', TasksController ];
+export default [ '$mdDialog', '$scope', '$mdToast', TasksController ];
