@@ -113,9 +113,17 @@ function TasksController($mdDialog, $scope, $mdToast) {
 
 
   /*
-   * Graph Stuff
+   * Sequencing Rules
    */
   var graph = new SequencingGraph();
+  graph.addEdge("Transport empty", "Transport loaded");
+  graph.addEdge("Transport empty", "Release load");
+  graph.addEdge("Transport empty", "Hold");
+  graph.addEdge("Grasp", "Transport empty");
+  graph.addEdge("Grasp", "Pick and drop");
+  graph.addEdge("Transport Loaded", "Transport Empty");
+  graph.addEdge("Transport Loaded", "Transport Empty");
+
 
   /*
    * Notification for therblig sequencing.
