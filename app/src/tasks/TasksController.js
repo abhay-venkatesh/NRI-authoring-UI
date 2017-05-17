@@ -98,11 +98,26 @@ function TasksController($mdDialog, $scope, $mdToast) {
   }
 
   /*
+   * Sequencing Rules
+   */
+  var graph = new SequencingGraph();
+  graph.addEdge("Transport Empty", "Transport Loaded");
+  graph.addEdge("Transport Empty", "Release Load");
+  graph.addEdge("Transport Empty", "Hold");
+  graph.addEdge("Grasp", "Transport Empty");
+  graph.addEdge("Grasp", "Pick and drop");
+  graph.addEdge("Transport Loaded", "Transport Empty");
+  graph.addEdge("Transport Loaded", "Transport Empty");
+
+  /*
    * Drop callback for Task TherbligsList
    */
   self.dropCallBack = (index, item, external, type, therbligsList) => {
     if(type == "physical" || type == "cognitive" || type == "cognitivephysical") {
-      return item;
+      if(graph.containsEdge(therbligsList[index - 1].name, item.name)) {
+        self.showActionToast();
+        return false;
+      } else return item;
     } else {
       item.therbligsList.forEach(function(entry) {
         therbligsList.push(entry);
@@ -110,20 +125,6 @@ function TasksController($mdDialog, $scope, $mdToast) {
       return true;
     }
   };
-
-
-  /*
-   * Sequencing Rules
-   */
-  var graph = new SequencingGraph();
-  graph.addEdge("Transport empty", "Transport loaded");
-  graph.addEdge("Transport empty", "Release load");
-  graph.addEdge("Transport empty", "Hold");
-  graph.addEdge("Grasp", "Transport empty");
-  graph.addEdge("Grasp", "Pick and drop");
-  graph.addEdge("Transport Loaded", "Transport Empty");
-  graph.addEdge("Transport Loaded", "Transport Empty");
-
 
   /*
    * Notification for therblig sequencing.
