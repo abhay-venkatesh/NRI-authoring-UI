@@ -105,19 +105,26 @@ function TasksController($mdDialog, $scope, $mdToast) {
   graph.addEdge("Transport Empty", "Release Load");
   graph.addEdge("Transport Empty", "Hold");
   graph.addEdge("Grasp", "Transport Empty");
-  graph.addEdge("Grasp", "Pick and drop");
-  graph.addEdge("Transport Loaded", "Transport Empty");
+  graph.addEdge("Grasp", "Pick and Drop");
   graph.addEdge("Transport Loaded", "Transport Empty");
 
   /*
    * Drop callback for Task TherbligsList
    */
   self.dropCallBack = (index, item, external, type, therbligsList) => {
+    // If item being dropped is a therblig
     if(type == "physical" || type == "cognitive" || type == "cognitivephysical") {
+
+      // Return the item if the TherbligsList is empty
+      if(index - 1 < 0) return item;
+
+      // Check if the therblig sequence is allowed
       if(graph.containsEdge(therbligsList[index - 1].name, item.name)) {
         self.showActionToast();
         return false;
       } else return item;
+
+    // Else the item being dropped is a Macro
     } else {
       item.therbligsList.forEach(function(entry) {
         therbligsList.push(entry);
