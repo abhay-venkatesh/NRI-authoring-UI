@@ -107,6 +107,8 @@ function TasksController($mdDialog, $scope, $mdToast) {
   graph.addEdge("Grasp", "Transport Empty");
   graph.addEdge("Grasp", "Pick and Drop");
   graph.addEdge("Transport Loaded", "Transport Empty");
+  graph.addEdge("Release Load", "Transport Loaded");
+  graph.addEdge("Hold", "Transport Empty");
 
   /*
    * Drop callback for Task TherbligsList
