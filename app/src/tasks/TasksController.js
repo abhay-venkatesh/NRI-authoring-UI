@@ -128,10 +128,18 @@ function TasksController($mdDialog, $scope, $mdToast) {
 
     // Else the item being dropped is a Macro
     } else {
-      item.therbligsList.forEach(function(entry) {
-        therbligsList.push(entry);
-      });
-      return true;
+
+      // Check if the therblig sequence is allowed
+      var firstTherblig = item.therbligsList[0];
+      if(graph.containsEdge(therbligsList[index - 1].name, firstTherblig.name)) {
+        self.showActionToast();
+        return false;
+      } else {
+        item.therbligsList.forEach(function(entry) {
+          therbligsList.push(entry);
+        });
+        return true;
+      }
     }
   };
 
