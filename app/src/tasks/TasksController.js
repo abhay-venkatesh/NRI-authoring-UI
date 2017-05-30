@@ -130,6 +130,7 @@ function TasksController($mdDialog, $scope, $mdToast) {
     } else {
 
       // Check if the therblig sequence is allowed
+      var firstTherblig = item.therbligsList[0];
       if((index - 1) >= 0 && graph.containsEdge(therbligsList[index - 1].name, firstTherblig.name)) {
         self.showActionToast();
         return false;
