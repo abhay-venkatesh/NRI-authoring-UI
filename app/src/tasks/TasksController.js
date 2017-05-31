@@ -138,6 +138,7 @@ function TasksController($mdDialog, $scope, $mdToast) {
           }
         }
 
+        // Alter state of the task depeneding on if an object is grasped or not
         if(item.name == "Grasp") task.graspedState = true;
         if(item.name == "Release Load") task.graspedState = false;
 
