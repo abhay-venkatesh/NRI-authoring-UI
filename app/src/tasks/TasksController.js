@@ -113,7 +113,7 @@ function TasksController($mdDialog, $scope, $mdToast) {
   /*
    * Drop callback for Task TherbligsList
    */
-  self.dropCallBack = (index, item, external, type, therbligsList) => {
+  self.dropCallBack = (index, item, external, type, therbligsList, task) => {
     // If item being dropped is a therblig
     if(type == "physical" || type == "cognitive" || type == "cognitivephysical") {
 
@@ -124,7 +124,25 @@ function TasksController($mdDialog, $scope, $mdToast) {
       if(graph.containsEdge(therbligsList[index - 1].name, item.name)) {
         self.showActionToast();
         return false;
-      } else return item;
+      } else {
+
+        // Automatically assign thing to the therblig before returning the item
+        if(item.hasOwnProperty('thing') && task.graspedState) {
+          var i = 1;
+          while(!therbligsList[index - i].hasOwnProperty('thing') &&
+            (index - i) > 0) {
+            i++;
+          }
+          if(therbligsList[index - i].hasOwnProperty('thing')) {
+            item.thing = therbligsList[index - i].thing;
+          }
+        }
+
+        if(item.name == "Grasp") task.graspedState = true;
+        if(item.name == "Release Load") task.graspedState = false;
+
+        return item;
+      }
 
     // Else the item being dropped is a Macro
     } else {

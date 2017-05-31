@@ -31,7 +31,7 @@
           <md-card-content class="task-card-content">
             <md-list dnd-list="task.therbligList" 
                      dnd-drop="$ctrl.dropCallBack(index, item, external, type,
-                     task.therbligList)"
+                     task.therbligList, task)"
               dnd-allowed-types="['physical', 'cognitive', 'cognitivePhysical', 'macro']">
               <md-list-item 
                 ng-repeat="therblig in task.therbligList"
