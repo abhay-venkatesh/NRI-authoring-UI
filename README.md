@@ -2,6 +2,8 @@
 
 ** Work in Progress **
 
+Live demo at: http://nri-authoring-ui.herokuapp.com/
+
 ```sh
 # Setup
 npm install
