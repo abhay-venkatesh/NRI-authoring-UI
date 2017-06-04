@@ -118,17 +118,27 @@ function AppController(TherbligsDataService, TaskCardsDataService,
   }
 
   /*
-   * Save task.
-   * @param task to save
+   * Save Plan
+   * @param tasks to save
+   * @param things list to save
+   * @param position list to save
+   * @param macros list to save
+   *
    */
-  self.save = (tasksToSave) => {
-    var textToSave = JSON.stringify(tasksToSave);
+  self.save = (tasks, things, positions, macros) => {
+    var composite = {};
+    composite.tasks = tasks;
+    composite.things = things;
+    composite.positions = positions;
+    composite.macros = macros;
+
+    var textToSave = JSON.stringify(composite);
     var data = new Blob([textToSave], { type: 'text/json;charset=utf-8' });
     FileSaver.saveAs(data, 'tasks.json');
   };
 
   /*
-   * Upload tasks.
+   * Upload Plan.
    *
    */
   $scope.$watch('file', function(){
@@ -136,7 +146,11 @@ function AppController(TherbligsDataService, TaskCardsDataService,
       var r = new FileReader();
       r.onloadend = function(e){
         var data = e.target.result;
-        self.tasks = JSON.parse(data);
+        var composite = JSON.parse(data);
+        self.tasks = composite.tasks;
+        self.things = composite.things;
+        self.positions = composite.positions;
+        self.macros = composite.macros;
       };
       r.readAsText($scope.file);
     }
