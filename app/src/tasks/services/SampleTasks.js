@@ -29,6 +29,26 @@ var tasks = [
             },
           ],
           thing: {},
+          assignment: 'robot',
+        },
+        {
+          name: 'Transport Empty',
+          type: 'physical',
+          parameters: [
+            position,
+            { name: 'Orientation',
+              val: ''
+            } ,
+            {
+              name: 'Angle',
+              val: '',
+            },
+            {
+              name: 'Arm',
+              val: '',
+            },
+          ],
+          assignment: 'human',
         },
       ],
     },

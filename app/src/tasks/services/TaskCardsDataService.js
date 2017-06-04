@@ -11,7 +11,7 @@ import SampleTasks from 'src/tasks/services/SampleTasks';
  */
 function TaskCardsDataService($q) {
   // Task List
-  var tasks = [];
+  var tasks = SampleTasks.tasks;
 
   // Promise-based API
   return {

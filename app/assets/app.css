@@ -182,3 +182,20 @@ input[type="file"] {
 .strike {
   text-decoration: line-through;
 }
+
+.robot-assigned {
+  border-left: 4px solid;
+  border-color: pink;
+  margin-right: 30px;
+}
+
+.human-assigned {
+  border-right: 4px solid;
+  border-color: lightblue;
+  margin-left: 30px;
+}
+
+.md-no-style {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}

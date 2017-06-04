@@ -27,8 +27,9 @@
             </div>
           </div>
 
+
           <! -- Therblig List in Task -->
-          <md-card-content class="task-card-content">
+          <md-card-content class="task-card-content therbligs-card">
             <md-list dnd-list="task.therbligList" 
                      dnd-drop="$ctrl.dropCallBack(index, item, external, type,
                      task.therbligList, task)"
@@ -40,7 +41,8 @@
                 dnd-moved="task.therbligList.splice($index, 1)"
                 dnd-effect-allowed="move">
                 <span class="md-button md-raised" 
-                 ng-class="{'selected': therblig === $ctrl.selected}">
+                 ng-class="{ 'robot-assigned': (therblig.assignment == 'robot'),
+                 'human-assigned': (therblig.assignment == 'human')}">
                     {{ therblig.name }}
 
                 <md-button class="md-icon-button button-icon" aria-label="Edit Therblig"
