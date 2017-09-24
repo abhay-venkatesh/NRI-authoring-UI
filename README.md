@@ -5,6 +5,9 @@
 Live demo at: http://nri-authoring-ui.herokuapp.com/
 
 ```sh
+# Pre-setup
+brew install node
+
 # Setup
 npm install
 
