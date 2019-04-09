@@ -1,7 +1,5 @@
 # User interface for the NSF NRI Authoring environment.
 
-** Work in Progress **
-
 Live demo at: http://nri-authoring-ui.herokuapp.com/
 
 ```sh
